@@ -4,186 +4,231 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Academic Portfolio of Dr. Vijay Victor, Economist and Assistant Professor.">
-    <title>Dr. Vijay Victor | Academic Portfolio</title>
+    <title>Dr. Vijay Victor | Academic Profile</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --bg-color: #f9f9f9;
+            --bg-color: #f4f5f7;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --primary-accent: #1e3a8a; /* Deep Academic Blue */
+            --secondary-accent: #bfdbfe;
+            --sidebar-bg: #ffffff;
+            --content-bg: #ffffff;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-            color: #ecf0f1;
-        }
-
-        nav {
-            background-color: var(--secondary-color);
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 20px;
-        }
-
-        section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: var(--primary-accent);
             margin-top: 0;
         }
 
-        .publication, .project {
+        .layout {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            margin: 3rem auto;
+            gap: 2rem;
+            padding: 0 1.5rem;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            flex: 0 0 300px;
+            background: var(--sidebar-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--secondary-accent);
+        }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
 
-        .publication-title {
-            font-weight: bold;
-            color: var(--secondary-color);
+        .contact-links a {
+            display: block;
+            text-decoration: none;
+            color: var(--primary-accent);
+            font-weight: 500;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
         }
 
-        .tags {
+        .contact-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex: 1;
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .tag {
-            background-color: #e0f2fe;
-            color: #0284c7;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
+        section {
+            background: var(--content-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            font-size: 1.6rem;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #111;
+        }
+
+        .item-meta {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.2rem;
+        }
+
+        .paper-authors {
+            font-size: 0.95rem;
+            color: #444;
+            margin-top: 0.3rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background-color: var(--secondary-accent);
+            color: var(--primary-accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 500;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--primary-color);
-            color: white;
-            margin-top: 2rem;
+        /* Mobile Responsiveness */
+        @media (max-width: 850px) {
+            .layout {
+                flex-direction: column;
+                margin: 1.5rem auto;
+            }
+            .sidebar {
+                position: static;
+                flex: auto;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Dr. Vijay Victor</h1>
-        <p>Assistant Professor, Department of Humanities and Social Sciences</p>
-        <p>Indian Institute of Technology (IIT) Roorkee</p>
-    </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am an economist specializing in behavioral economics, health economics, and applied econometrics. I currently serve as an Assistant Professor in the Department of Humanities and Social Sciences at the Indian Institute of Technology (IIT) Roorkee.</p>
-            <p>I hold a PhD (Summa Cum Laude) from the Hungarian University of Agriculture and Life Sciences (formerly Szent István University). In addition to my teaching and research, I serve as a Scientific Editor for the <em>International Review of Economics and Finance</em>.</p>
-        </section>
-
-        <section id="research">
-            <h2>Current Research & Projects</h2>
-            <div class="project">
-                <h3>Mapping Dengue Proliferation Zones</h3>
-                <p><strong>Role:</strong> Principal Investigator (PI)</p>
-                <p><strong>Funding:</strong> J-PAL South Asia</p>
-                <p>This project involves spatial and econometric mapping of dengue proliferation zones to design and implement targeted health interventions and policy frameworks.</p>
+    <div class="layout">
+        <aside class="sidebar">
+            <img src="https://via.placeholder.com/160/1e3a8a/ffffff?text=VV" alt="Dr. Vijay Victor" class="profile-img">
+            <h1>Dr. Vijay Victor</h1>
+            <p>Assistant Professor<br>Department of Humanities & Social Sciences<br>IIT Roorkee</p>
+            
+            <div class="contact-links">
+                <a href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a>
+                <a href="https://linkedin.com/in/vijay-victor-95059a52" target="_blank">LinkedIn Profile</a>
+                <a href="https://publons.com/researcher/1608242/vijay-victor/" target="_blank">Publons Profile</a>
             </div>
-        </section>
+        </aside>
 
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <div class="publication">
-                <div class="publication-title">Spousal Bereavement and Depression</div>
-                <div class="publication-journal"><em>Economics & Human Biology</em> (Q1 Scopus)</div>
-            </div>
+        <main class="main-content">
+            
+            <section id="about">
+                <h2>About</h2>
+                <p>I am an economist specializing in behavioral economics, health economics, and applied econometrics. I currently serve as an Assistant Professor in the Department of Humanities and Social Sciences at the Indian Institute of Technology (IIT) Roorkee.</p>
+                <p>I hold a PhD (Summa Cum Laude) from the Hungarian University of Agriculture and Life Sciences. Alongside my academic teaching and research, I serve as a Scientific Editor for the <em>International Review of Economics and Finance</em> (Elsevier).</p>
             </section>
 
-        <section id="skills">
-            <h2>Technical & Analytical Skills</h2>
-            <div class="tags">
-                <span class="tag">R</span>
-                <span class="tag">Stata</span>
-                <span class="tag">Python</span>
-                <span class="tag">Applied Econometrics</span>
-                <span class="tag">LaTeX</span>
-                <span class="tag">VS Code</span>
-            </div>
-        </section>
+            <section id="publications">
+                <h2>Selected Publications</h2>
+                
+                <div class="item">
+                    <div class="item-title">Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</div>
+                    <div class="paper-authors"><strong>Vijay Victor</strong>, Subramanian S., & Divya Pradeep</div>
+                    <div class="item-meta"><em>Journal of Behavioral and Experimental Economics</em> (2026), 102557. Scopus Q1.</div>
+                </div>
 
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Feel free to reach out regarding research collaborations, data availability for projects, or academic inquiries.</p>
-            <p><strong>Email:</strong> [Insert IIT Roorkee Email Here]</p>
-            <p><strong>LinkedIn:</strong> <a href="#">[Insert Link]</a></p>
-            <p><strong>Google Scholar:</strong> <a href="#">[Insert Link]</a></p>
-        </section>
+                <div class="item">
+                    <div class="item-title">Spousal bereavement and depression: Testing moderating effects of pre-loss circumstances and social support in India</div>
+                    <div class="paper-authors"><strong>Vijay Victor</strong></div>
+                    <div class="item-meta"><em>Economics & Human Biology</em> (2026), 101585. Scopus Q1.</div>
+                </div>
+                
+            </section>
 
+            <section id="research">
+                <h2>Funded Research</h2>
+                <div class="item">
+                    <div class="item-title">Mapping Climate-induced Dengue Proliferation Zones in Kerala for Targeted Health Interventions</div>
+                    <div class="item-meta"><strong>Role:</strong> Principal Investigator (PI) | <strong>Funding:</strong> J-PAL South Asia (2024–Present)</div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Technical & Analytical Stack</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Stata</span>
+                    <span class="skill-tag">LaTeX</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">SmartPLS</span>
+                    <span class="skill-tag">Microfit</span>
+                    <span class="skill-tag">Tableau</span>
+                </div>
+            </section>
+
+        </main>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Dr. Vijay Victor. All Rights Reserved.</p>
-    </footer>
 
 </body>
 </html>
