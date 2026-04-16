@@ -109,14 +109,16 @@
     /* ── Sidebar ── */
     .sidebar { align-self: start; position: sticky; top: 4.5rem; }
 
-    .profile-photo {
-      width: 100%; aspect-ratio: 4/5;
-      display: block;
-      border: 1px solid var(--rule);
-      margin-bottom: 1.25rem;
-      overflow: hidden;
-      background: var(--paper);
-    }
+  .profile-photo {
+  width: 65%; /* This shrinks the image */
+  margin: 0 auto 1.25rem auto; /* This centers it in the sidebar */
+  aspect-ratio: 4/5;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 8px; /* Adds a nice slight curve to the corners */
+  overflow: hidden;
+  background: var(--paper);
+}
     
     .profile-photo img {
       width: 100%;
