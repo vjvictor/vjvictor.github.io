@@ -3,994 +3,819 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dr. Vijay Victor is an Assistant Professor of Economics at IIT Roorkee. His research focuses on behavioural economics, health economics, applied econometrics, causal inference, and public policy." />
+  <meta name="description" content="Dr. Vijay Victor is an Assistant Professor of Economics at IIT Roorkee. Research in behavioural economics, health economics, causal inference, and public policy." />
   <meta name="keywords" content="Vijay Victor, IIT Roorkee, Economics, Behavioural Economics, Health Economics, Applied Econometrics, Causal Inference, Public Policy" />
   <meta name="author" content="Dr. Vijay Victor" />
-
-  <meta property="og:title" content="Dr. Vijay Victor | Economist" />
-  <meta property="og:description" content="Assistant Professor of Economics at IIT Roorkee working on behavioural economics, health economics, causal inference, and applied econometrics." />
+  <meta property="og:title" content="Vijay Victor | IIT Roorkee" />
+  <meta property="og:description" content="Assistant Professor of Economics at IIT Roorkee." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="profile.jpg" />
+  <title>Vijay Victor | Economist, IIT Roorkee</title>
 
-  <title>Dr. Vijay Victor | Economist</title>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dr. Vijay Victor",
-    "jobTitle": "Assistant Professor",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Indian Institute of Technology Roorkee"
-    },
-    "email": "vijay.victor@hs.iitr.ac.in",
-    "sameAs": [
-      "https://linkedin.com/in/vijay-victor-95059a52",
-      "https://publons.com/researcher/1608242/vijay-victor/"
-    ],
-    "knowsAbout": [
-      "Behavioural Economics",
-      "Health Economics",
-      "Applied Econometrics",
-      "Causal Inference",
-      "Public Policy"
-    ]
-  }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
+    /* ── Design tokens ── */
     :root {
-      --bg: #f8f8f5;
-      --paper: #ffffff;
-      --paper-soft: #f3f1ea;
-      --ink: #1b1b18;
-      --muted: #62625d;
-      --line: #d9d6ca;
-      --blue: #153b63;
-      --blue-soft: #e7eef7;
-      --maroon: #7a1f2a;
-      --gold: #a67c2d;
-      --shadow: 0 16px 42px rgba(27, 27, 24, 0.08);
-      --max: 1160px;
+      --bg:          #f9f8f4;
+      --paper:       #ffffff;
+      --ink:         #1a1a17;
+      --muted:       #5a5a54;
+      --faint:       #9a998f;
+      --rule:        #e0ddd4;
+      --accent:      #1d3461;      /* deep navy */
+      --accent-warm: #8b2e16;      /* muted crimson for hover / highlights */
+      --accent-bg:   #eef2f9;
+      --max:         1100px;
+      --sidebar-w:   280px;
+      --serif:       "EB Garamond", Georgia, serif;
+      --sans:        "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --shadow:      0 2px 24px rgba(26,26,23,.07);
     }
 
     [data-theme="dark"] {
-      --bg: #111318;
-      --paper: #191d24;
-      --paper-soft: #222735;
-      --ink: #f2efe7;
-      --muted: #b8b3a8;
-      --line: #343846;
-      --blue: #9dc4ee;
-      --blue-soft: #172131;
-      --maroon: #e09aa8;
-      --gold: #d8b56f;
-      --shadow: 0 16px 42px rgba(0, 0, 0, 0.25);
+      --bg:        #10100e;
+      --paper:     #181815;
+      --ink:       #ede9df;
+      --muted:     #a8a49a;
+      --faint:     #6a6860;
+      --rule:      #2e2e28;
+      --accent:    #7aaddd;
+      --accent-warm:#e4907a;
+      --accent-bg: #151c26;
+      --shadow:    0 2px 24px rgba(0,0,0,.28);
     }
 
-    * { box-sizing: border-box; }
-
+    *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.62;
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.68;
     }
 
-    a {
-      color: var(--blue);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
+    a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:hover { color: var(--accent-warm); }
 
-    a:hover { color: var(--maroon); }
+    /* ── Skip link ── */
+    .skip { position: absolute; left: -9999px; top: 1rem; background: var(--accent); color: #fff; padding: .6rem 1rem; z-index: 999; font-family: var(--sans); }
+    .skip:focus { left: 1rem; }
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 1rem;
-      background: var(--blue);
-      color: white;
-      padding: 0.7rem 1rem;
-      z-index: 999;
-    }
-
-    .skip-link:focus { left: 1rem; }
-
+    /* ── Topbar ── */
     .topbar {
-      border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 50;
       background: color-mix(in srgb, var(--paper) 92%, transparent);
-      backdrop-filter: blur(14px);
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
     }
-
     .topbar-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
+      max-width: var(--max); margin: 0 auto;
+      padding: .7rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     }
-
     .site-name {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 700;
-      color: var(--ink);
-      text-decoration: none;
-      letter-spacing: 0.01em;
+      font-family: var(--sans); font-weight: 600; font-size: .95rem;
+      letter-spacing: .04em; text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
     }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.9rem;
+    .topnav {
+      display: flex; align-items: center; gap: 1.4rem;
+      font-family: var(--sans); font-size: .88rem;
     }
-
-    .nav a {
-      color: var(--muted);
-      text-decoration: none;
+    .topnav a { color: var(--muted); text-decoration: none; }
+    .topnav a:hover { color: var(--accent); }
+    .theme-btn {
+      background: none; border: 1px solid var(--rule);
+      color: var(--faint); padding: .28rem .55rem;
+      border-radius: 4px; cursor: pointer;
+      font-family: var(--sans); font-size: .8rem;
     }
+    .theme-btn:hover { color: var(--accent); border-color: var(--accent); }
 
-    .nav a:hover { color: var(--blue); }
-
-    .theme-button {
-      border: 1px solid var(--line);
-      background: var(--paper);
-      color: var(--muted);
-      border-radius: 999px;
-      padding: 0.35rem 0.65rem;
-      cursor: pointer;
-      font: inherit;
-    }
-
-    .theme-button:hover {
-      color: var(--blue);
-      border-color: var(--blue);
-    }
-
+    /* ── Page layout ── */
     .page {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
+      max-width: var(--max); margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
       display: grid;
-      grid-template-columns: 310px 1fr;
-      gap: 3rem;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: 3.5rem;
     }
 
-    .sidebar {
-      align-self: start;
-      position: sticky;
-      top: 5.5rem;
-    }
+    /* ── Sidebar ── */
+    .sidebar { align-self: start; position: sticky; top: 4.5rem; }
 
-    .identity-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      padding: 1.25rem;
-    }
-
-    .portrait {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      background:
-        linear-gradient(135deg, rgba(21, 59, 99, 0.12), rgba(166, 124, 45, 0.12)),
-        var(--paper-soft);
-      display: grid;
-      place-items: center;
-      margin-bottom: 1.1rem;
-      border: 1px solid var(--line);
-    }
-
-    .portrait span {
-      width: 120px;
-      height: 120px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 2px solid var(--blue);
-      color: var(--blue);
-      font-family: ui-sans-serif, system-ui, sans-serif;
-      font-weight: 800;
-      font-size: 2.4rem;
-      letter-spacing: -0.08em;
-      background: var(--paper);
-    }
-
-    .identity-card h1 {
-      margin: 0;
-      font-size: 2.05rem;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      font-weight: 500;
-    }
-
-    .designation {
-      margin: 0.7rem 0 0;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .sidebar-section {
-      margin-top: 1.25rem;
-      border-top: 1px solid var(--line);
-      padding-top: 1rem;
-    }
-
-    .sidebar-section h2 {
-      margin: 0 0 0.55rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--maroon);
-    }
-
-    .sidebar-section p,
-    .sidebar-section li {
-      margin: 0;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.9rem;
-    }
-
-    .sidebar-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.35rem;
-    }
-
-    .link-list {
-      display: grid;
-      gap: 0.45rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.92rem;
-    }
-
-    .link-list a {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.45rem 0;
-      border-bottom: 1px dotted var(--line);
-      text-decoration: none;
-    }
-
-    .main {
-      min-width: 0;
-    }
-
-    .intro {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .intro h2 {
-      margin: 0 0 1rem;
-      font-size: clamp(2rem, 5vw, 3.6rem);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-      font-weight: 500;
-    }
-
-    .intro p {
-      margin: 0;
-      max-width: 790px;
-      font-size: 1.14rem;
-      color: var(--ink);
-    }
-
-    .quick-actions {
-      margin-top: 1.35rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      border: 1px solid var(--blue);
-      background: var(--blue);
-      color: white;
-      padding: 0.62rem 0.85rem;
-      text-decoration: none;
-      font-weight: 650;
-      font-size: 0.9rem;
-    }
-
-    .button:hover {
-      color: white;
-      background: var(--maroon);
-      border-color: var(--maroon);
-    }
-
-    .button.secondary {
-      background: var(--paper);
-      color: var(--blue);
-    }
-
-    .button.secondary:hover {
-      color: var(--maroon);
-      border-color: var(--maroon);
-    }
-
-    section {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 1.65rem 2rem;
+    .profile-photo {
+      width: 100%; aspect-ratio: 4/5;
+      display: block;
+      border: 1px solid var(--rule);
       margin-bottom: 1.25rem;
+      overflow: hidden;
+      background: var(--paper);
     }
-
-    section h2 {
-      margin: 0 0 1.15rem;
-      padding-bottom: 0.55rem;
-      border-bottom: 2px solid var(--line);
-      font-size: 1.45rem;
-      font-weight: 500;
-      letter-spacing: -0.015em;
-    }
-
-    h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1.07rem;
-      line-height: 1.35;
-      font-weight: 600;
-    }
-
-    .section-note {
-      color: var(--muted);
-      margin: -0.45rem 0 1rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.94rem;
-    }
-
-    .fields {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .field {
-      border-left: 3px solid var(--blue);
-      background: var(--paper-soft);
-      padding: 0.9rem 1rem;
-    }
-
-    .field strong {
+    
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
+    }
+
+    .profile-name {
+      margin: 0; font-family: var(--serif);
+      font-size: 1.6rem; font-weight: 500; line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+    .profile-title {
+      margin: .55rem 0 0;
+      font-family: var(--sans); font-size: .9rem;
+      color: var(--muted); line-height: 1.5;
+    }
+
+    .sidebar-block {
+      margin-top: 1.2rem; padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+    .sidebar-label {
+      margin: 0 0 .45rem;
+      font-family: var(--sans); font-size: .73rem;
+      text-transform: uppercase; letter-spacing: .13em;
+      color: var(--faint);
+    }
+    .sidebar-block p,
+    .sidebar-block li {
+      margin: 0; font-family: var(--sans); font-size: .88rem; color: var(--muted); line-height: 1.4;
+    }
+    .sidebar-block ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar-block ul li { padding: .25rem 0; }
+    .sidebar-block ul li::before { content: "—"; margin-right: .45rem; color: var(--faint); }
+
+    .ext-links { display: grid; gap: .3rem; }
+    .ext-link {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: var(--sans); font-size: .87rem;
+      padding: .32rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--accent);
+    }
+    .ext-link:last-child { border-bottom: 0; }
+    .ext-link .arrow { color: var(--faint); font-size: .8rem; }
+
+    /* ── Main content ── */
+    .main { min-width: 0; }
+
+    /* ── Bio section ── */
+    .bio {
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 2.25rem;
+      margin-bottom: 2.25rem;
+    }
+    .bio p {
+      margin: 0 0 1rem; font-size: 1.08rem; max-width: 720px;
       color: var(--ink);
-      margin-bottom: 0.2rem;
+    }
+    .bio p:last-of-type { margin-bottom: 0; }
+
+    .text-links {
+      margin-top: 1.1rem;
+      display: flex; flex-wrap: wrap; gap: .6rem 1.4rem;
+      font-family: var(--sans); font-size: .9rem;
+    }
+    .text-links a { font-weight: 500; }
+
+    /* ── News strip ── */
+    .news-strip {
+      border-left: 3px solid var(--accent);
+      padding: .7rem 1rem;
+      background: var(--accent-bg);
+      margin-bottom: 2.25rem;
+    }
+    .news-strip h3 {
+      margin: 0 0 .5rem;
+      font-family: var(--sans); font-size: .75rem;
+      text-transform: uppercase; letter-spacing: .13em; color: var(--faint);
+    }
+    .news-items { display: grid; gap: .4rem; }
+    .news-item {
+      display: grid; grid-template-columns: 90px 1fr; gap: .5rem;
+      font-family: var(--sans); font-size: .87rem;
+    }
+    .news-date { color: var(--faint); }
+    .news-body { color: var(--ink); }
+
+    /* ── Section headings ── */
+    .content-section { margin-bottom: 2.75rem; }
+    .content-section h2 {
+      margin: 0 0 1.1rem;
+      padding-bottom: .45rem;
+      border-bottom: 1px solid var(--rule);
+      font-family: var(--sans); font-size: 1rem;
+      font-weight: 600; letter-spacing: .03em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .content-section > p {
+      margin: 0 0 .9rem; max-width: 720px;
     }
 
-    .field span {
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.92rem;
+    /* ── Publications ── */
+    .pub-list { display: grid; gap: 0; }
+    .pub {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
     }
+    .pub:first-child { padding-top: 0; }
+    .pub:last-child { border-bottom: 0; }
 
-    .toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    .pub-title {
+      margin: 0 0 .3rem;
+      font-family: var(--serif); font-size: 1.05rem;
+      font-weight: 500; line-height: 1.38;
     }
-
-    .filter-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
+    .pub-authors {
+      margin: 0 0 .15rem;
+      font-family: var(--sans); font-size: .88rem; color: var(--muted);
     }
-
-    .filter-button {
-      border: 1px solid var(--line);
-      background: var(--paper);
-      color: var(--muted);
-      padding: 0.4rem 0.6rem;
-      cursor: pointer;
-      font: inherit;
-      font-size: 0.85rem;
-    }
-
-    .filter-button.active,
-    .filter-button:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      background: var(--blue-soft);
-    }
-
-    .search {
-      min-width: min(100%, 270px);
-      border: 1px solid var(--line);
-      background: var(--paper);
-      color: var(--ink);
-      padding: 0.55rem 0.7rem;
-      font: inherit;
-      font-size: 0.9rem;
-    }
-
-    .search:focus {
-      outline: 2px solid var(--blue-soft);
-      border-color: var(--blue);
-    }
-
-    .publication-list,
-    .cv-list {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .publication {
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .publication:last-child { border-bottom: 0; padding-bottom: 0; }
-
-    .year {
-      color: var(--maroon);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 750;
-      font-size: 0.9rem;
-      padding-top: 0.1rem;
-    }
-
-    .publication p,
-    .cv-entry p {
-      margin: 0.25rem 0;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.93rem;
-    }
-
-    .pub-labels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.5rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .label {
-      border: 1px solid var(--line);
-      color: var(--muted);
-      background: var(--paper-soft);
-      padding: 0.18rem 0.42rem;
-      font-size: 0.78rem;
-    }
-
-    .cv-entry {
-      display: grid;
-      grid-template-columns: 155px 1fr;
-      gap: 1rem;
-      padding-bottom: 0.9rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .cv-entry:last-child { border-bottom: 0; padding-bottom: 0; }
-
-    .date {
-      color: var(--maroon);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.9rem;
-      font-weight: 750;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem 1.5rem;
-    }
-
-    .plain-list {
+    .pub-journal {
       margin: 0;
-      padding-left: 1.2rem;
+      font-family: var(--sans); font-size: .88rem; color: var(--muted);
+    }
+    .pub-journal em { font-style: italic; color: var(--ink); }
+    .pub-links {
+      margin-top: .5rem; display: flex; flex-wrap: wrap; gap: .5rem 1.1rem;
+      font-family: var(--sans); font-size: .82rem;
+    }
+    .pub-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .pub-links a:hover { text-decoration: underline; color: var(--accent-warm); }
+
+    /* abstract toggle */
+    .abstract-btn {
+      background: none; border: none; cursor: pointer;
+      font-family: var(--sans); font-size: .82rem; color: var(--faint);
+      padding: 0; font-weight: 500;
+    }
+    .abstract-btn:hover { color: var(--accent); }
+    .abstract-body {
+      margin-top: .65rem; padding: .75rem 1rem;
+      background: var(--bg); border-left: 2px solid var(--rule);
+      font-family: var(--sans); font-size: .87rem; color: var(--muted);
+      line-height: 1.62;
+      display: none;
+    }
+    .abstract-body.open { display: block; }
+
+    /* ── Working papers ── */
+    .wp-list { display: grid; gap: 0; }
+    .wp {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .wp:first-child { padding-top: 0; }
+    .wp:last-child { border-bottom: 0; }
+    .wp-status {
+      display: inline-block;
+      font-family: var(--sans); font-size: .75rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--accent-warm); font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    .wp-title {
+      margin: 0 0 .3rem;
+      font-family: var(--serif); font-size: 1.05rem;
+      font-weight: 500; line-height: 1.38;
+    }
+    .wp-desc {
+      margin: 0;
+      font-family: var(--sans); font-size: .88rem; color: var(--muted);
+    }
+    .wp-grant {
+      margin-top: .5rem;
+      font-family: var(--sans); font-size: .83rem; color: var(--accent);
+    }
+    .wp-grant::before { content: "Funding: "; color: var(--faint); }
+
+    /* ── CV list ── */
+    .cv-list { display: grid; gap: 0; }
+    .cv-row {
+      display: grid; grid-template-columns: 165px 1fr;
+      gap: .6rem 1.2rem;
+      padding: .95rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .cv-row:first-child { padding-top: 0; }
+    .cv-row:last-child { border-bottom: 0; }
+    .cv-date {
+      font-family: var(--sans); font-size: .85rem;
+      color: var(--faint); padding-top: .15rem;
+    }
+    .cv-row h3 { margin: 0 0 .2rem; font-family: var(--serif); font-size: 1rem; font-weight: 600; }
+    .cv-row p { margin: 0; font-family: var(--sans); font-size: .88rem; color: var(--muted); }
+
+    /* ── Teaching ── */
+    .course-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem;
+    }
+    .course-item {
+      padding: .75rem .9rem;
+      border: 1px solid var(--rule);
+      font-family: var(--sans); font-size: .88rem;
+    }
+    .course-code {
+      display: block; font-weight: 600; color: var(--accent);
+      font-size: .82rem; text-transform: uppercase; letter-spacing: .04em;
+      margin-bottom: .15rem;
     }
 
-    .plain-list li {
-      margin-bottom: 0.45rem;
-    }
+    /* ── Service ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
+    .two-col h3 { margin: 0 0 .6rem; font-family: var(--sans); font-size: .88rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .plain-list { margin: 0; padding-left: 1.1rem; }
+    .plain-list li { margin-bottom: .4rem; font-family: var(--sans); font-size: .9rem; }
 
-    .course-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.7rem;
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid; gap: .55rem;
+      font-family: var(--sans); font-size: .9rem;
     }
+    .contact-grid a { color: var(--accent); }
+    .contact-row { display: flex; gap: .6rem; align-items: baseline; }
+    .contact-label { color: var(--faint); min-width: 70px; font-size: .83rem; text-transform: uppercase; letter-spacing: .07em; }
 
-    .course {
-      border: 1px solid var(--line);
-      background: var(--paper-soft);
-      padding: 0.8rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .course strong {
-      display: block;
-      color: var(--blue);
-      margin-bottom: 0.15rem;
-    }
-
-    .contact-box {
-      border: 1px solid var(--line);
-      background: var(--paper-soft);
-      padding: 1rem;
-      display: grid;
-      gap: 0.4rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
+    /* ── Footer ── */
     .footer {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 1.25rem 2.5rem;
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.88rem;
+      max-width: var(--max); margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1.25rem;
+      font-family: var(--sans); font-size: .82rem; color: var(--faint);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
     }
 
+    /* ── Utility ── */
     .hidden { display: none !important; }
 
-    @media (max-width: 900px) {
-      .page {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-
-      .sidebar {
-        position: static;
-      }
-
-      .identity-card {
-        display: grid;
-        grid-template-columns: 140px 1fr;
-        gap: 1rem;
-        align-items: start;
-      }
-
-      .portrait {
-        margin-bottom: 0;
-      }
-
-      .sidebar-section {
-        grid-column: 1 / -1;
-      }
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .page { grid-template-columns: 1fr; gap: 1.5rem; }
+      .sidebar { position: static; }
+      .profile-photo { aspect-ratio: 3/1; }
     }
-
-    @media (max-width: 700px) {
-      .topbar-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 0.2rem;
-      }
-
-      .identity-card,
-      .publication,
-      .cv-entry,
-      .fields,
+    @media (max-width: 640px) {
+      .topnav { gap: .8rem; font-size: .82rem; }
+      .cv-row,
       .two-col,
-      .course-list {
-        grid-template-columns: 1fr;
-      }
-
-      .intro,
-      section {
-        padding: 1.25rem;
-      }
-
-      .toolbar {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .search {
-        width: 100%;
-      }
+      .course-grid { grid-template-columns: 1fr; }
+      .cv-date { padding-top: 0; }
+      .news-item { grid-template-columns: 1fr; gap: 0; }
+      .news-date { color: var(--accent); }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
 
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="site-name" href="#top">Vijay Victor</a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#working-papers">Working papers</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-button" type="button" id="themeToggle">Theme</button>
-      </nav>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a class="site-name" href="#top">Vijay Victor</a>
+    <nav class="topnav" aria-label="Page sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#working-papers">Working Papers</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">◑</button>
+    </nav>
+  </div>
+</header>
+
+<div class="page" id="top">
+
+  <aside class="sidebar" aria-label="Profile">
+
+    <div class="profile-photo">
+      <img src="vijay.png" alt="Dr. Vijay Victor" />
     </div>
-  </header>
 
-  <div class="page" id="top">
-    <aside class="sidebar" aria-label="Profile sidebar">
-      <div class="identity-card">
-        <div class="portrait">
-          <!-- Replace the placeholder with: <img src="profile.jpg" alt="Dr. Vijay Victor" /> -->
-          <span aria-hidden="true">VV</span>
-        </div>
+    <h1 class="profile-name">Vijay Victor</h1>
+    <p class="profile-title">
+      Assistant Professor<br>
+      Dept. of Humanities &amp; Social Sciences<br>
+      Indian Institute of Technology Roorkee
+    </p>
 
-        <div>
-          <h1>Dr. Vijay Victor</h1>
-          <p class="designation">
-            Assistant Professor<br />
-            Department of Humanities and Social Sciences<br />
-            Indian Institute of Technology Roorkee
+    <div class="sidebar-block">
+      <p class="sidebar-label">Education</p>
+      <p>Ph.D., Economics<br>Hungarian University of Agriculture and Life Sciences</p>
+      <p style="margin-top:.4rem;">M.A., Economics<br>Kerala University</p>
+    </div>
+
+    <div class="sidebar-block">
+      <p class="sidebar-label">Research fields</p>
+      <ul>
+        <li>Behavioural Economics</li>
+        <li>Health Economics</li>
+        <li>Applied Econometrics</li>
+        <li>Causal Inference</li>
+        <li>Public Policy</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <p class="sidebar-label">Affiliations</p>
+      <p>Assistant Professor, IIT Roorkee</p>
+      <p style="margin-top:.3rem;">Visiting Researcher, University of Johannesburg</p>
+    </div>
+
+    <div class="sidebar-block">
+      <p class="sidebar-label">Links</p>
+      <div class="ext-links">
+        <a class="ext-link" href="mailto:vijay.victor@hs.iitr.ac.in">Email <span class="arrow">→</span></a>
+        <a class="ext-link" href="CV.pdf" target="_blank" rel="noopener">Curriculum Vitae <span class="arrow">PDF</span></a>
+        <a class="ext-link" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar <span class="arrow">↗</span></a>
+        <a class="ext-link" href="https://ideas.repec.org/" target="_blank" rel="noopener">IDEAS / RePec <span class="arrow">↗</span></a>
+        <a class="ext-link" href="https://ssrn.com/" target="_blank" rel="noopener">SSRN <span class="arrow">↗</span></a>
+        <a class="ext-link" href="https://publons.com/researcher/1608242/vijay-victor/" target="_blank" rel="noopener">Reviewer Profile <span class="arrow">↗</span></a>
+        <a class="ext-link" href="https://linkedin.com/in/vijay-victor-95059a52" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+      </div>
+    </div>
+
+  </aside>
+
+  <main class="main" id="content">
+
+    <div class="bio" id="about">
+      <p>
+        I am an Assistant Professor in the Department of Humanities and Social Sciences at the Indian
+        Institute of Technology Roorkee, and a Visiting Researcher at the University of Johannesburg.
+        My research spans behavioural economics, health economics, and empirical policy evaluation.
+      </p>
+      <p>
+        I study how households and individuals make decisions under constraints — with particular
+        attention to health insurance design, out-of-pocket pharmaceutical expenditure, maternal
+        nutrition, climate-sensitive disease proliferation, dishonesty, and choice architecture.
+        Methodologically, I draw on difference-in-differences, field and discrete choice experiments,
+        and applied microeconometrics.
+      </p>
+      <p>
+        I am a Principal Investigator on two J-PAL South Asia-funded projects on climate and dengue
+        risk mapping, and on behavioural dietary interventions for pregnant women in Karnataka.
+      </p>
+      <div class="text-links">
+        <a href="CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+        <a href="#publications">Selected Publications</a>
+        <a href="#working-papers">Working Papers &amp; Grants</a>
+        <a href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a>
+      </div>
+    </div>
+
+    <div class="news-strip">
+      <h3>Recent</h3>
+      <div class="news-items">
+        <div class="news-item"><span class="news-date">2026</span><span class="news-body">New paper in <em>Journal of Behavioral and Experimental Economics</em>: behavioural nudges and maternal diet, cluster-RCT.</span></div>
+        <div class="news-item"><span class="news-date">2026</span><span class="news-body">New paper in <em>Economics &amp; Human Biology</em>: spousal bereavement and depression in India.</span></div>
+        <div class="news-item"><span class="news-date">2024</span><span class="news-body">Appointed to Editorial Board, <em>Humanities and Social Sciences Communications</em> (Nature Portfolio).</span></div>
+        <div class="news-item"><span class="news-date">2024</span><span class="news-body">J-PAL South Asia grant awarded: dengue proliferation mapping in Kerala (₹16,26,785).</span></div>
+      </div>
+    </div>
+
+    <section class="content-section" id="research">
+      <h2>Research</h2>
+      <p>
+        My research agenda sits at the intersection of behavioural economics, health economics, and
+        empirical policy evaluation. I am particularly interested in how behavioural frictions and
+        institutional design affect welfare-relevant decisions in health, insurance, and household
+        consumption.
+      </p>
+      <p>
+        On the health side, I examine the causal effects of publicly financed health insurance
+        expansion — especially pharmaceutical coverage — on out-of-pocket expenditure among
+        near-poor and missing-middle households, using administrative data and
+        difference-in-differences designs.
+      </p>
+      <p>
+        My behavioural work uses field experiments and discrete choice methods to study nudges
+        in maternal nutrition, time preferences, and dishonesty in digital markets. A parallel
+        strand investigates climate-induced disease risk, focusing on how shifting temperature and
+        rainfall patterns expand dengue proliferation zones and shape risk perception and
+        health-seeking behaviour in Kerala.
+      </p>
+    </section>
+
+    <section class="content-section" id="publications">
+      <h2>Publications</h2>
+
+      <div class="pub-list">
+
+        <article class="pub">
+          <p class="pub-title">Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</p>
+          <p class="pub-authors"><strong>Victor, V.</strong>, Subramanian, S., &amp; Pradeep, D.</p>
+          <p class="pub-journal"><em>Journal of Behavioral and Experimental Economics</em>, 102557 (2026).</p>
+          <div class="pub-links">
+            <a href="#">Journal link</a>
+            <a href="#">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            We report results from a cluster-randomised pilot trial examining whether low-cost
+            behavioural nudges — combining simplified dietary information, commitment devices, and
+            social norm messaging — improve dietary intake among pregnant women in rural India.
+            [Add abstract text here.]
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Spousal bereavement and depression: Testing moderating effects of pre-loss circumstances and social support in India</p>
+          <p class="pub-authors"><strong>Victor, V.</strong></p>
+          <p class="pub-journal"><em>Economics &amp; Human Biology</em>, 101585 (2026).</p>
+          <div class="pub-links">
+            <a href="#">Journal link</a>
+            <a href="#">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            Using nationally representative panel data from India, this paper examines how spousal
+            bereavement affects depression, and whether social support networks and pre-loss
+            circumstances moderate this relationship. [Add abstract text here.]
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Incentivised dishonesty: Moral frameworks underlying fake online reviews</p>
+          <p class="pub-authors"><strong>Victor, V.</strong>, James, N., &amp; Dominic, E.</p>
+          <p class="pub-journal"><em>International Journal of Consumer Studies</em>, 48(2), e13037 (2024).</p>
+          <div class="pub-links">
+            <a href="#">Journal link</a>
+            <a href="#">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            [Add abstract text here.]
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Nudges and choice architecture in public policy: A bibliometric analysis</p>
+          <p class="pub-authors"><strong>Victor, V.</strong>, Nair, A. M., &amp; Meyer, D. F.</p>
+          <p class="pub-journal"><em>Journal of Behavioral and Experimental Economics</em>, 102020 (2023).</p>
+          <div class="pub-links">
+            <a href="#">Journal link</a>
+            <a href="#">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            [Add abstract text here.]
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Message framing and COVID-19 vaccine acceptance among millennials in South India</p>
+          <p class="pub-authors">Prakash, A., Jeyakumar Nathan, R., Kini, S., &amp; <strong>Victor, V.</strong></p>
+          <p class="pub-journal"><em>PLOS ONE</em>, 17(7), e0269487 (2022).</p>
+          <div class="pub-links">
+            <a href="#">Journal link</a>
+            <a href="#">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            [Add abstract text here.]
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Gym-goers' self-identification with physically attractive fitness trainers and intention to exercise</p>
+          <p class="pub-authors">Nathan, R. J., <strong>Victor, V.</strong>, &amp; Pei Kian, T.</p>
+          <p class="pub-journal"><em>Behavioral Sciences</em>, 12(5), 158 (2022).</p>
+          <div class="pub-links">
+            <a href="#">Journal link</a>
+            <a href="#">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            [Add abstract text here.]
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Food innovation adoption and organic food consumerism: A cross-national study between Malaysia and Hungary</p>
+          <p class="pub-authors">Nathan, R. J., <strong>Victor, V.</strong>, Popp, J., Fekete-Farkas, M., &amp; Oláh, J.</p>
+          <p class="pub-journal"><em>Foods</em>, 10(2), 363 (2021).</p>
+          <div class="pub-links">
+            <a href="#">Journal link</a>
+            <a href="#">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            [Add abstract text here.]
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="content-section" id="working-papers">
+      <h2>Working Papers &amp; Projects</h2>
+
+      <div class="wp-list">
+
+        <div class="wp">
+          <span class="wp-status">Working paper</span>
+          <p class="wp-title">Does integrating pharmaceutical coverage into publicly financed health insurance reduce out-of-pocket spending?</p>
+          <p class="wp-desc">
+            Difference-in-differences evidence from Kerala, India. The paper exploits a policy reform
+            that expanded outpatient pharmaceutical coverage under a state-run insurance scheme to
+            identify its effect on catastrophic health expenditure and near-poor household welfare.
           </p>
+          <div class="pub-links" style="margin-top:.5rem;">
+            <a href="#">Draft (PDF)</a>
+          </div>
         </div>
 
-        <div class="sidebar-section">
-          <h2>Research fields</h2>
-          <ul>
-            <li>Behavioural Economics</li>
-            <li>Health Economics</li>
-            <li>Applied Econometrics</li>
-            <li>Causal Inference</li>
-            <li>Public Policy</li>
-          </ul>
+        <div class="wp">
+          <span class="wp-status">Funded project — Principal Investigator</span>
+          <p class="wp-title">Mapping climate-induced dengue proliferation zones in Kerala for targeted health interventions</p>
+          <p class="wp-desc">
+            Uses satellite-derived climate data and administrative dengue incidence records to identify
+            high-risk zones and design scalable, evidence-based public-health interventions.
+          </p>
+          <p class="wp-grant">J-PAL South Asia · ₹16,26,785</p>
         </div>
 
-        <div class="sidebar-section">
-          <h2>Affiliations</h2>
-          <p>Assistant Professor, IIT Roorkee</p>
-          <p>Visiting Researcher, University of Johannesburg</p>
+        <div class="wp">
+          <span class="wp-status">Funded project — Co-Principal Investigator</span>
+          <p class="wp-title">Effectiveness of behavioural interventions on dietary intake of pregnant women in Karnataka, India</p>
+          <p class="wp-desc">
+            A randomised evaluation of nudge-based dietary programmes administered at antenatal
+            care clinics. Assesses impacts on dietary diversity and micronutrient intake among
+            low-income pregnant women.
+          </p>
+          <p class="wp-grant">J-PAL South Asia · ₹20,81,162</p>
         </div>
 
-        <div class="sidebar-section">
-          <h2>Links</h2>
-          <div class="link-list">
-            <a href="mailto:vijay.victor@hs.iitr.ac.in">Email <span>→</span></a>
-            <a href="CV.pdf" target="_blank" rel="noopener">Curriculum vitae <span>PDF</span></a>
-            <a href="https://linkedin.com/in/vijay-victor-95059a52" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
-            <a href="https://publons.com/researcher/1608242/vijay-victor/" target="_blank" rel="noopener">Reviewer profile <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="content-section" id="teaching">
+      <h2>Teaching</h2>
+      <p style="font-family:var(--sans);font-size:.9rem;color:var(--muted);margin-bottom:1rem;">
+        Courses taught at IIT Roorkee, Department of Humanities and Social Sciences.
+      </p>
+      <div class="course-grid">
+        <div class="course-item">
+          <span class="course-code">HSC-204</span>
+          Advanced Econometrics
+        </div>
+        <div class="course-item">
+          <span class="course-code">HS 504</span>
+          Econometrics Lab: Causal Inference
+        </div>
+        <div class="course-item">
+          <span class="course-code">HSN 512</span>
+          Behavioural Economics
+        </div>
+        <div class="course-item">
+          <span class="course-code">HS 501</span>
+          Industrial Organisation
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="cv">
+      <h2>Curriculum Vitae</h2>
+
+      <div class="cv-list">
+        <div class="cv-row">
+          <div class="cv-date">Feb 2024 – present</div>
+          <div>
+            <h3>Assistant Professor</h3>
+            <p>Department of Humanities and Social Sciences, Indian Institute of Technology Roorkee, India.</p>
+          </div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-date">Aug 2021 – present</div>
+          <div>
+            <h3>Visiting Researcher</h3>
+            <p>College of Business and Economics, University of Johannesburg, South Africa.</p>
+          </div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-date">Jul 2022 – Jan 2024</div>
+          <div>
+            <h3>Assistant Professor &amp; Area Co-Chair</h3>
+            <p>Accounting, Economics and Finance Area, TA Pai Management Institute, Manipal Academy of Higher Education.</p>
+          </div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-date">Jul 2020 – Jun 2022</div>
+          <div>
+            <h3>Assistant Professor</h3>
+            <p>Department of Economics, CHRIST University, Bangalore, India.</p>
+          </div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-date">2017 – 2020</div>
+          <div>
+            <h3>PhD in Economics — <em>Summa Cum Laude</em></h3>
+            <p>Doctoral School of Economic and Regional Sciences, Hungarian University of Agriculture and Life Sciences.</p>
           </div>
         </div>
       </div>
-    </aside>
 
-    <main class="main" id="content">
-      <section class="intro" aria-label="Short biography">
-        <h2>Economist working on behaviour, health, and public policy.</h2>
-        <p>
-          I am an Assistant Professor in the Department of Humanities and Social Sciences at the Indian Institute of Technology Roorkee. My research examines how households and individuals make decisions under constraints, with particular attention to health insurance, out-of-pocket expenditure, maternal nutrition, climate-sensitive disease risks, dishonesty, nudges, and policy design. Methodologically, I work with causal inference, field experiments, discrete choice methods, and applied microeconometrics.
-        </p>
-        <div class="quick-actions">
-          <a class="button" href="#publications">Selected publications</a>
-          <a class="button secondary" href="#working-papers">Working papers</a>
-          <a class="button secondary" href="CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <p style="margin-top:1.25rem;font-family:var(--sans);font-size:.9rem;">
+        <a href="CV.pdf" target="_blank" rel="noopener">Download full CV (PDF) →</a>
+      </p>
+    </section>
+
+    <section class="content-section" id="service">
+      <h2>Editorial Service &amp; Reviewing</h2>
+      <div class="two-col">
+        <div>
+          <h3>Editorial roles</h3>
+          <ul class="plain-list">
+            <li>Scientific Editor, <em>International Review of Economics and Finance</em>, Elsevier.</li>
+            <li>Editorial Board, <em>Humanities and Social Sciences Communications</em>, Nature Portfolio.</li>
+            <li>Editorial Board, <em>Journal of Economic Exploitation and Inequality</em>, Emerald.</li>
+          </ul>
         </div>
-      </section>
-
-      <section id="research">
-        <h2>Research</h2>
-        <p>
-          My research agenda sits at the intersection of behavioural economics, health economics, and empirical policy evaluation. I am especially interested in how behavioural frictions and institutional design affect welfare-relevant decisions in health, insurance, and household finance.
-        </p>
-
-        <div class="fields">
-          <div class="field">
-            <strong>Health insurance and household welfare</strong>
-            <span>Publicly financed health insurance, outpatient pharmaceutical coverage, out-of-pocket expenditure, and missing-middle households.</span>
-          </div>
-          <div class="field">
-            <strong>Behavioural interventions</strong>
-            <span>Nudges, choice architecture, maternal diet, dishonesty, time preferences, and decision-making under scarcity.</span>
-          </div>
-          <div class="field">
-            <strong>Causal inference and policy evaluation</strong>
-            <span>Difference-in-differences, field experiments, discrete choice experiments, and applied econometric research designs.</span>
-          </div>
-          <div class="field">
-            <strong>Climate and health risks</strong>
-            <span>Climate-induced dengue risk, disease proliferation zones, risk perception, and targeted public-health interventions.</span>
-          </div>
+        <div>
+          <h3>Ad hoc reviewer</h3>
+          <ul class="plain-list">
+            <li><em>Applied Economics</em></li>
+            <li><em>Journal of Business Research</em></li>
+            <li><em>International Journal of Emerging Markets</em></li>
+            <li><em>Policy and Society</em></li>
+            <li><em>International Journal of Applied Behavioural Economics</em></li>
+          </ul>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="publications">
-        <h2>Selected publications</h2>
-        <p class="section-note">Search and filter the selected list. Add journal links, DOI links, working paper PDFs, and replication packages when available.</p>
+    <section class="content-section" id="writing">
+      <h2>Public Writing</h2>
+      <p style="font-family:var(--sans);font-size:.9rem;color:var(--muted);">
+        Guest author at the <a href="https://fee.org/people/vijay-victor/" target="_blank" rel="noopener">Foundation for Economic Education</a>
+        and the <a href="https://mises.org/profile/vijay-victor" target="_blank" rel="noopener">Mises Institute</a>.
+        Selected articles: "Greening the MBA, not greenwashing it"; "The rupee is a long way from replacing the dollar";
+        "High bank fixed deposit interest rates may not last for long"; "Inflation: Misled by mismeasurement."
+      </p>
+    </section>
 
-        <div class="toolbar">
-          <div class="filter-buttons" aria-label="Publication filters">
-            <button class="filter-button active" type="button" data-filter="all">All</button>
-            <button class="filter-button" type="button" data-filter="health">Health</button>
-            <button class="filter-button" type="button" data-filter="behaviour">Behaviour</button>
-            <button class="filter-button" type="button" data-filter="policy">Policy</button>
-          </div>
-          <input class="search" id="publicationSearch" type="search" placeholder="Search publications" aria-label="Search publications" />
+    <section class="content-section" id="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <a href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a>
         </div>
-
-        <div class="publication-list" id="publicationList">
-          <article class="publication" data-category="health behaviour" data-search="behavioural nudges maternal diet cluster randomised pilot trial pregnant women india journal behavioral experimental economics 2026">
-            <div class="year">2026</div>
-            <div>
-              <h3>Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</h3>
-              <p><strong>Victor, V.</strong>, Subramanian, S., & Pradeep, D.</p>
-              <p><em>Journal of Behavioral and Experimental Economics</em>, 102557.</p>
-              <div class="pub-labels"><span class="label">Journal article</span><span class="label">Scopus Q1</span><span class="label">RCT</span></div>
-            </div>
-          </article>
-
-          <article class="publication" data-category="health policy" data-search="spousal bereavement depression moderating effects pre loss circumstances social support india economics human biology 2026">
-            <div class="year">2026</div>
-            <div>
-              <h3>Spousal bereavement and depression: Testing moderating effects of pre-loss circumstances and social support in India</h3>
-              <p><strong>Victor, V.</strong></p>
-              <p><em>Economics & Human Biology</em>, 101585.</p>
-              <div class="pub-labels"><span class="label">Journal article</span><span class="label">Scopus Q1</span><span class="label">Health economics</span></div>
-            </div>
-          </article>
-
-          <article class="publication" data-category="behaviour" data-search="incentivised dishonesty moral frameworks fake online reviews international journal consumer studies 2024">
-            <div class="year">2024</div>
-            <div>
-              <h3>Incentivised dishonesty: Moral frameworks underlying fake online reviews</h3>
-              <p><strong>Victor, V.</strong>, James, N., & Dominic, E.</p>
-              <p><em>International Journal of Consumer Studies</em>, 48(2), e13037.</p>
-              <div class="pub-labels"><span class="label">Journal article</span><span class="label">Scopus Q1</span><span class="label">Consumer behaviour</span></div>
-            </div>
-          </article>
-
-          <article class="publication" data-category="behaviour policy" data-search="nudges choice architecture public policy bibliometric analysis journal behavioral experimental economics 2023">
-            <div class="year">2023</div>
-            <div>
-              <h3>Nudges and choice architecture in public policy: A bibliometric analysis</h3>
-              <p><strong>Victor, V.</strong>, Nair, A. M., & Meyer, D. F.</p>
-              <p><em>Journal of Behavioral and Experimental Economics</em>, 102020.</p>
-              <div class="pub-labels"><span class="label">Journal article</span><span class="label">Scopus Q1</span><span class="label">Public policy</span></div>
-            </div>
-          </article>
-
-          <article class="publication" data-category="health behaviour" data-search="message framing covid 19 vaccine acceptance millennials south india plos one 2022">
-            <div class="year">2022</div>
-            <div>
-              <h3>Message framing and COVID-19 vaccine acceptance among millennials in South India</h3>
-              <p>Prakash, A., Jeyakumar Nathan, R., Kini, S., & <strong>Victor, V.</strong></p>
-              <p><em>PLOS ONE</em>, 17(7), e0269487.</p>
-              <div class="pub-labels"><span class="label">Journal article</span><span class="label">Scopus Q1</span><span class="label">Health behaviour</span></div>
-            </div>
-          </article>
-
-          <article class="publication" data-category="behaviour" data-search="gym goers self identification physically attractive fitness trainers intention to exercise behavioral sciences 2022">
-            <div class="year">2022</div>
-            <div>
-              <h3>Gym-goers’ self-identification with physically attractive fitness trainers and intention to exercise</h3>
-              <p>Nathan, R. J., <strong>Victor, V.</strong>, & Pei Kian, T.</p>
-              <p><em>Behavioral Sciences</em>, 12(5), 158.</p>
-              <div class="pub-labels"><span class="label">Journal article</span><span class="label">Scopus Q1</span><span class="label">Behaviour</span></div>
-            </div>
-          </article>
-
-          <article class="publication" data-category="behaviour policy" data-search="food innovation adoption organic food consumerism cross national malaysia hungary foods 2021">
-            <div class="year">2021</div>
-            <div>
-              <h3>Food innovation adoption and organic food consumerism: A cross-national study between Malaysia and Hungary</h3>
-              <p>Nathan, R. J., <strong>Victor, V.</strong>, Popp, J., Fekete-Farkas, M., & Oláh, J.</p>
-              <p><em>Foods</em>, 10(2), 363.</p>
-              <div class="pub-labels"><span class="label">Journal article</span><span class="label">Scopus Q1</span><span class="label">Food economics</span></div>
-            </div>
-          </article>
+        <div class="contact-row">
+          <span class="contact-label">Office</span>
+          <span>Dept. of Humanities &amp; Social Sciences, IIT Roorkee, Roorkee 247667, Uttarakhand, India.</span>
         </div>
-      </section>
-
-      <section id="working-papers">
-        <h2>Working papers and projects</h2>
-        <div class="cv-list">
-          <div class="cv-entry">
-            <div class="date">In progress</div>
-            <div>
-              <h3>Does integrating pharmaceutical coverage into publicly financed health insurance reduce out-of-pocket spending?</h3>
-              <p>Difference-in-differences evidence from Kerala, India.</p>
-            </div>
-          </div>
-          <div class="cv-entry">
-            <div class="date">Funded project</div>
-            <div>
-              <h3>Mapping climate-induced dengue proliferation zones in Kerala for targeted health interventions</h3>
-              <p>Principal Investigator. Funded by J-PAL South Asia. Grant amount: ₹16,26,785.</p>
-            </div>
-          </div>
-          <div class="cv-entry">
-            <div class="date">Funded project</div>
-            <div>
-              <h3>Effectiveness of behavioural interventions on dietary intake of pregnant women in Karnataka, India</h3>
-              <p>Co-Principal Investigator. Funded by J-PAL South Asia. Grant amount: ₹20,81,162.</p>
-            </div>
-          </div>
+        <div class="contact-row" style="margin-top:.3rem;">
+          <span class="contact-label" style="min-width:70px;"></span>
+          <span style="color:var(--muted);font-size:.88rem;">
+            I welcome enquiries regarding research collaboration, seminar invitations, doctoral supervision,
+            editorial correspondence, and media comments.
+          </span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="teaching">
-        <h2>Teaching</h2>
-        <p class="section-note">Courses taught at IIT Roorkee.</p>
-        <div class="course-list">
-          <div class="course"><strong>HSC-204</strong> Advanced Econometrics</div>
-          <div class="course"><strong>HS 504</strong> Econometrics Lab: Causal Inference</div>
-          <div class="course"><strong>HSN 512</strong> Behavioural Economics</div>
-          <div class="course"><strong>HS 501</strong> Industrial Organisation</div>
-        </div>
-      </section>
+  </main>
+</div><footer class="footer">
+  <span>© <span id="yr"></span> Vijay Victor</span>
+  <span>Last updated: <span id="upd"></span></span>
+</footer>
 
-      <section id="cv">
-        <h2>Curriculum vitae</h2>
-        <div class="cv-list">
-          <div class="cv-entry">
-            <div class="date">Feb 2024 – Present</div>
-            <div>
-              <h3>Assistant Professor</h3>
-              <p>Department of Humanities and Social Sciences, Indian Institute of Technology Roorkee.</p>
-            </div>
-          </div>
-          <div class="cv-entry">
-            <div class="date">Aug 2021 – Present</div>
-            <div>
-              <h3>Visiting Researcher</h3>
-              <p>College of Business and Economics, University of Johannesburg, South Africa.</p>
-            </div>
-          </div>
-          <div class="cv-entry">
-            <div class="date">Jul 2022 – Jan 2024</div>
-            <div>
-              <h3>Assistant Professor and Area Co-Chair</h3>
-              <p>Accounting, Economics and Finance Area, TA Pai Management Institute, Manipal Academy of Higher Education.</p>
-            </div>
-          </div>
-          <div class="cv-entry">
-            <div class="date">Jul 2020 – Jun 2022</div>
-            <div>
-              <h3>Assistant Professor</h3>
-              <p>Department of Economics, CHRIST University, Bangalore.</p>
-            </div>
-          </div>
-          <div class="cv-entry">
-            <div class="date">2017 – 2020</div>
-            <div>
-              <h3>PhD in Economics</h3>
-              <p>Hungarian University of Agriculture and Life Sciences, Doctoral School of Economic and Regional Sciences. Summa Cum Laude.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+<script>
+  /* ── Theme toggle ── */
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('vv-theme');
+  if (saved) root.setAttribute('data-theme', saved);
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('vv-theme', next);
+  });
 
-      <section id="service">
-        <h2>Editorial service and reviewing</h2>
-        <div class="two-col">
-          <div>
-            <h3>Editorial assignments</h3>
-            <ul class="plain-list">
-              <li>Scientific Editor, <em>International Review of Economics and Finance</em>, Elsevier.</li>
-              <li>Editorial Board Member, <em>Humanities and Social Sciences Communications</em>, Nature Portfolio.</li>
-              <li>Editorial Board Member, <em>Journal of Economic Exploitation and Inequality</em>, Emerald.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Reviewer service</h3>
-            <ul class="plain-list">
-              <li><em>Applied Economics</em></li>
-              <li><em>Journal of Business Research</em></li>
-              <li><em>International Journal of Emerging Markets</em></li>
-              <li><em>Policy and Society</em></li>
-              <li><em>International Journal of Applied Behavioural Economics</em></li>
-            </ul>
-          </div>
-        </div>
-      </section>
+  /* ── Abstract toggle ── */
+  function toggleAbstract(btn) {
+    const body = btn.closest('.pub').querySelector('.abstract-body');
+    const open = body.classList.toggle('open');
+    btn.textContent = (open ? '▾' : '▸') + ' Abstract';
+  }
 
-      <section id="writing">
-        <h2>Public writing</h2>
-        <div class="two-col">
-          <div>
-            <h3>Guest author profiles</h3>
-            <ul class="plain-list">
-              <li><a href="https://fee.org/people/vijay-victor/" target="_blank" rel="noopener">Foundation for Economic Education</a></li>
-              <li><a href="https://mises.org/profile/vijay-victor" target="_blank" rel="noopener">Mises Institute</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Selected articles</h3>
-            <ul class="plain-list">
-              <li>Greening the MBA, not greenwashing it.</li>
-              <li>Rupee is a long way from replacing the dollar.</li>
-              <li>High bank fixed deposit interest rates may not last for long.</li>
-              <li>Inflation: Misled by mismeasurement.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-box">
-          <div><strong>Email:</strong> <a href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a></div>
-          <div><strong>Office:</strong> Department of Humanities and Social Sciences, Indian Institute of Technology Roorkee, Roorkee, India</div>
-          <div><strong>For:</strong> Research collaboration, seminar invitations, doctoral supervision queries, editorial correspondence, and media comments.</div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Dr. Vijay Victor. Last updated: <span id="updated"></span>.</p>
-  </footer>
-
-  <script>
-    const html = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
-    const publicationSearch = document.getElementById('publicationSearch');
-    const publications = Array.from(document.querySelectorAll('.publication'));
-    const filterButtons = Array.from(document.querySelectorAll('.filter-button'));
-    let activeFilter = 'all';
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) html.setAttribute('data-theme', savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
-
-    function filterPublications() {
-      const query = publicationSearch.value.trim().toLowerCase();
-      publications.forEach(pub => {
-        const category = pub.dataset.category || '';
-        const text = pub.dataset.search || pub.textContent.toLowerCase();
-        const categoryMatch = activeFilter === 'all' || category.includes(activeFilter);
-        const searchMatch = !query || text.includes(query);
-        pub.classList.toggle('hidden', !(categoryMatch && searchMatch));
-      });
-    }
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        activeFilter = button.dataset.filter;
-        filterPublications();
-      });
-    });
-
-    publicationSearch.addEventListener('input', filterPublications);
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('updated').textContent = new Date().toLocaleDateString('en-IN', {
-      year: 'numeric', month: 'long', day: 'numeric'
-    });
-  </script>
+  /* ── Footer dates ── */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('upd').textContent = new Date().toLocaleDateString('en-IN', {
+    year: 'numeric', month: 'long'
+  });
+</script>
 </body>
 </html>
