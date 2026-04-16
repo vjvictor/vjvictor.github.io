@@ -1,234 +1,1275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic Portfolio of Dr. Vijay Victor, Economist and Assistant Professor.">
-    <title>Dr. Vijay Victor | Academic Profile</title>
-    <style>
-        :root {
-            --bg-color: #f4f5f7;
-            --text-main: #333333;
-            --text-muted: #666666;
-            --primary-accent: #1e3a8a; /* Deep Academic Blue */
-            --secondary-accent: #bfdbfe;
-            --sidebar-bg: #ffffff;
-            --content-bg: #ffffff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dr. Vijay Victor is an Assistant Professor of Economics at IIT Roorkee. His research focuses on behavioural economics, health economics, causal inference, applied econometrics, and public policy." />
+  <meta name="keywords" content="Vijay Victor, IIT Roorkee, Economics, Behavioural Economics, Health Economics, Applied Econometrics, Causal Inference, Public Policy" />
+  <meta name="author" content="Dr. Vijay Victor" />
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-        }
+  <meta property="og:title" content="Dr. Vijay Victor | Economist | IIT Roorkee" />
+  <meta property="og:description" content="Assistant Professor of Economics at IIT Roorkee working on behavioural economics, health economics, causal inference, and applied econometrics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpg" />
 
-        h1, h2, h3 {
-            font-family: 'Georgia', serif;
-            color: var(--primary-accent);
-            margin-top: 0;
-        }
+  <title>Dr. Vijay Victor | Economist | IIT Roorkee</title>
 
-        .layout {
-            display: flex;
-            max-width: 1100px;
-            width: 100%;
-            margin: 3rem auto;
-            gap: 2rem;
-            padding: 0 1.5rem;
-        }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Vijay Victor",
+    "jobTitle": "Assistant Professor",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Indian Institute of Technology Roorkee"
+    },
+    "email": "vijay.victor@hs.iitr.ac.in",
+    "url": "https://your-domain.com",
+    "sameAs": [
+      "https://linkedin.com/in/vijay-victor-95059a52",
+      "https://publons.com/researcher/1608242/vijay-victor/"
+    ],
+    "knowsAbout": [
+      "Behavioural Economics",
+      "Health Economics",
+      "Applied Econometrics",
+      "Causal Inference",
+      "Public Policy"
+    ]
+  }
+  </script>
 
-        /* Sidebar Styling */
-        .sidebar {
-            flex: 0 0 300px;
-            background: var(--sidebar-bg);
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            height: fit-content;
-            position: sticky;
-            top: 2rem;
-        }
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-soft: #f1f5f9;
+      --text: #172033;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --primary: #12315f;
+      --primary-2: #1f5f8b;
+      --accent: #a77428;
+      --accent-soft: #fff4df;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --max-width: 1180px;
+    }
 
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            border: 3px solid var(--secondary-accent);
-        }
+    [data-theme="dark"] {
+      --bg: #09111f;
+      --surface: #101b2e;
+      --surface-soft: #0c1628;
+      --text: #e5edf7;
+      --muted: #9fb0c7;
+      --line: #21324b;
+      --primary: #8dbdf2;
+      --primary-2: #b9d7ff;
+      --accent: #f2c46d;
+      --accent-soft: #251b0c;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
 
-        .sidebar h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
+    * { box-sizing: border-box; }
 
-        .sidebar p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .contact-links a {
-            display: block;
-            text-decoration: none;
-            color: var(--primary-accent);
-            font-weight: 500;
-            margin: 0.5rem 0;
-            font-size: 0.95rem;
-            transition: opacity 0.2s;
-        }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(31, 95, 139, 0.12), transparent 34rem),
+        radial-gradient(circle at 85% 10%, rgba(167, 116, 40, 0.12), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
 
-        .contact-links a:hover {
-            opacity: 0.7;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        /* Main Content Styling */
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        section {
-            background: var(--content-bg);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 1rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      z-index: 100;
+    }
 
-        section h2 {
-            font-size: 1.6rem;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
+    .skip-link:focus {
+      left: 1rem;
+    }
 
-        .item {
-            margin-bottom: 1.5rem;
-        }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
 
-        .item:last-child {
-            margin-bottom: 0;
-        }
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.9rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-        .item-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #111;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
 
-        .item-meta {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 0.2rem;
-        }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 10px 30px rgba(18, 49, 95, 0.22);
+    }
 
-        .paper-authors {
-            font-size: 0.95rem;
-            color: #444;
-            margin-top: 0.3rem;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
+    .nav-links a {
+      padding: 0.45rem 0.2rem;
+      border-bottom: 2px solid transparent;
+    }
 
-        .skill-tag {
-            background-color: var(--secondary-accent);
-            color: var(--primary-accent);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+    .nav-links a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+    }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 850px) {
-            .layout {
-                flex-direction: column;
-                margin: 1.5rem auto;
-            }
-            .sidebar {
-                position: static;
-                flex: auto;
-            }
-        }
-    </style>
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .button,
+    button.button {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(18, 49, 95, 0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(18, 49, 95, 0.24);
+      background: var(--primary-2);
+    }
+
+    .button.secondary {
+      background: var(--surface);
+      color: var(--primary);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .button.secondary:hover {
+      background: var(--surface-soft);
+      box-shadow: none;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      background: color-mix(in srgb, var(--accent-soft) 75%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .hero h1 {
+      margin: 1.35rem 0 1rem;
+      font-size: clamp(2.4rem, 7vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.8rem;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 8px);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+    }
+
+    .portrait-wrap {
+      min-height: 390px;
+      border-radius: 24px;
+      background:
+        linear-gradient(145deg, rgba(18, 49, 95, 0.14), rgba(167, 116, 40, 0.14)),
+        var(--surface-soft);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .portrait-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      box-shadow: 0 28px 60px rgba(18, 49, 95, 0.28);
+    }
+
+    .profile-note {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 0;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.25rem;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.05);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.75rem;
+      line-height: 1;
+      color: var(--primary);
+      letter-spacing: -0.05em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 3.4rem 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.6fr 1fr;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      align-items: end;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.78rem;
+      margin-bottom: 0.45rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.055);
+    }
+
+    .card:hover {
+      border-color: color-mix(in srgb, var(--primary) 30%, var(--line));
+    }
+
+    .card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.1rem;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.32rem 0.62rem;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--primary);
+      border: 1px solid var(--line);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .feature-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.045);
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 0.92rem;
+    }
+
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .timeline-item p {
+      margin: 0.3rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .pub-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.9rem;
+      margin: 1.5rem 0;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-button {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .filter-button.active,
+    .filter-button:hover {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .search-box {
+      min-width: min(100%, 320px);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 0.75rem 1rem;
+      font: inherit;
+      outline: none;
+    }
+
+    .search-box:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 12%, transparent);
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 1rem;
+      padding: 1.15rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.045);
+    }
+
+    .pub-year {
+      display: grid;
+      place-items: center;
+      height: 58px;
+      border-radius: 16px;
+      background: var(--surface-soft);
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .publication h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.03rem;
+      line-height: 1.35;
+    }
+
+    .publication p {
+      margin: 0.28rem 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .pub-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+
+    .meta-pill {
+      border-radius: 999px;
+      padding: 0.28rem 0.55rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 1.35rem 0 1.35rem;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px 999px 0 0;
+    }
+
+    .amount {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      background: var(--surface-soft);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 0.82rem;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+    }
+
+    .course {
+      padding: 1rem;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .course strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .course span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .writing-list {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .writing-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 0.9rem 1rem;
+      color: var(--text);
+    }
+
+    .writing-link:hover {
+      border-color: var(--primary);
+    }
+
+    .writing-link span {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 10%, var(--surface)), var(--surface));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin: 0 0 1.2rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 0.9rem 1rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .back-to-top {
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-head,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .stats,
+      .grid-3,
+      .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 1rem;
+        right: 1rem;
+        padding: 1rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .nav {
+        padding: 0.75rem 1rem;
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
+      .stats,
+      .grid-2,
+      .grid-3,
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item,
+      .publication {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-wrap {
+        min-height: 280px;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="layout">
-        <aside class="sidebar">
-            <img src="vijay.png" alt="Dr. Vijay Victor" class="vijay-img">
-            <h1>Dr. Vijay Victor</h1>
-            <p>Assistant Professor<br>Department of Humanities & Social Sciences<br>IIT Roorkee</p>
-            
-            <div class="contact-links">
-                <a href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a>
-                <a href="https://linkedin.com/in/vijay-victor-95059a52" target="_blank">LinkedIn Profile</a>
-                <a href="https://publons.com/researcher/1608242/vijay-victor/" target="_blank">Publons Profile</a>
-            </div>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Dr. Vijay Victor home">
+        <span class="brand-mark">VV</span>
+        <span>Vijay Victor</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#editorial">Editorial</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="button secondary" id="themeToggle" type="button" aria-label="Toggle dark mode">Theme</button>
+        <button class="button secondary menu-toggle" id="menuToggle" type="button" aria-label="Open navigation">Menu</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Economist · Behavioural Science · Causal Inference</span>
+          <h1>Dr. Vijay Victor <span>studies behaviour, health, and public policy.</span></h1>
+          <p class="hero-lead">
+            Assistant Professor in the Department of Humanities and Social Sciences at IIT Roorkee. My work combines behavioural economics, health economics, applied econometrics, and field-based policy evaluation to study how people make decisions under risk, uncertainty, scarcity, and institutional constraints.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#publications">View publications</a>
+            <a class="button secondary" href="mailto:vijay.victor@hs.iitr.ac.in">Email me</a>
+            <a class="button secondary" href="CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Profile summary">
+          <div class="portrait-wrap">
+            <!-- Replace this block with: <img src="profile.jpg" alt="Portrait of Dr. Vijay Victor" /> -->
+            <div class="portrait-placeholder" aria-hidden="true">VV</div>
+          </div>
+          <div class="profile-note">
+            <strong>Current affiliation</strong><br />
+            Assistant Professor, Department of Humanities & Social Sciences, Indian Institute of Technology Roorkee
+          </div>
         </aside>
+      </div>
 
-        <main class="main-content">
-            
-            <section id="about">
-                <h2>About</h2>
-                <p>I am an economist specializing in behavioral economics, health economics, and applied econometrics. I currently serve as an Assistant Professor in the Department of Humanities and Social Sciences at the Indian Institute of Technology (IIT) Roorkee.</p>
-                <p>I hold a PhD (Summa Cum Laude) from the Hungarian University of Agriculture and Life Sciences. Alongside my academic teaching and research, I serve as a Scientific Editor for the <em>International Review of Economics and Finance</em> (Elsevier).</p>
-            </section>
+      <div class="container stats" aria-label="Academic highlights">
+        <div class="stat"><strong>7+</strong><span>Selected Q1 publications</span></div>
+        <div class="stat"><strong>2</strong><span>J-PAL South Asia funded projects</span></div>
+        <div class="stat"><strong>4</strong><span>Courses taught at IIT Roorkee</span></div>
+        <div class="stat"><strong>2026</strong><span>Scientific Editor, Elsevier journal</span></div>
+      </div>
+    </section>
 
-            <section id="publications">
-                <h2>Selected Publications</h2>
-                
-                <div class="item">
-                    <div class="item-title">Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</div>
-                    <div class="paper-authors"><strong>Vijay Victor</strong>, Subramanian S., & Divya Pradeep</div>
-                    <div class="item-meta"><em>Journal of Behavioral and Experimental Economics</em> (2026), 102557. Scopus Q1.</div>
-                </div>
+    <section id="research">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Research agenda</div>
+            <h2>Applied economics for real policy problems.</h2>
+          </div>
+          <p>
+            My research is organised around empirical questions where behavioural mechanisms, household constraints, and public policy design intersect. I use causal inference, discrete choice methods, field experiments, and applied microeconometrics.
+          </p>
+        </div>
 
-                <div class="item">
-                    <div class="item-title">Spousal bereavement and depression: Testing moderating effects of pre-loss circumstances and social support in India</div>
-                    <div class="paper-authors"><strong>Vijay Victor</strong></div>
-                    <div class="item-meta"><em>Economics & Human Biology</em> (2026), 101585. Scopus Q1.</div>
-                </div>
-                
-            </section>
+        <div class="grid-3">
+          <article class="card feature-card">
+            <div>
+              <div class="feature-icon">01</div>
+              <h3>Health economics and insurance design</h3>
+              <p>Publicly financed insurance, out-of-pocket expenditure, pharmaceutical coverage, missing-middle households, and health-seeking behaviour.</p>
+            </div>
+            <div class="tag-row">
+              <span class="tag">Health insurance</span><span class="tag">OOPE</span><span class="tag">DiD</span>
+            </div>
+          </article>
 
-            <section id="research">
-                <h2>Funded Research</h2>
-                <div class="item">
-                    <div class="item-title">Mapping Climate-induced Dengue Proliferation Zones in Kerala for Targeted Health Interventions</div>
-                    <div class="item-meta"><strong>Role:</strong> Principal Investigator (PI) | <strong>Funding:</strong> J-PAL South Asia (2024–Present)</div>
-                </div>
-            </section>
+          <article class="card feature-card">
+            <div>
+              <div class="feature-icon">02</div>
+              <h3>Behavioural economics and nudges</h3>
+              <p>Choice architecture, maternal nutrition, fake reviews, dishonesty, time preferences, privacy behaviour, and decision-making under bounded rationality.</p>
+            </div>
+            <div class="tag-row">
+              <span class="tag">Nudges</span><span class="tag">RCTs</span><span class="tag">Choice</span>
+            </div>
+          </article>
 
-            <section id="skills">
-                <h2>Technical & Analytical Stack</h2>
-                <div class="skills-grid">
-                    <span class="skill-tag">R</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Stata</span>
-                    <span class="skill-tag">LaTeX</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">SmartPLS</span>
-                    <span class="skill-tag">Microfit</span>
-                    <span class="skill-tag">Tableau</span>
-                </div>
-            </section>
+          <article class="card feature-card">
+            <div>
+              <div class="feature-icon">03</div>
+              <h3>Climate, disease, and household vulnerability</h3>
+              <p>Climate-sensitive disease risks, dengue proliferation zones, risk perception, financial preparedness, and targeted health interventions.</p>
+            </div>
+            <div class="tag-row">
+              <span class="tag">Climate</span><span class="tag">Dengue</span><span class="tag">Risk</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        </main>
+    <section id="positions">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Academic appointments</div>
+            <h2>Experience across research, teaching, and academic leadership.</h2>
+          </div>
+          <p>
+            Appointments span IIT Roorkee, University of Johannesburg, TAPMI, CHRIST University, and Szent István University, with responsibilities in teaching, research, editorial service, and area leadership.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Feb 2024 – Present</div>
+            <div>
+              <h3>Assistant Professor · IIT Roorkee</h3>
+              <p>Department of Humanities and Social Sciences, Indian Institute of Technology Roorkee.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2021 – Present</div>
+            <div>
+              <h3>Visiting Researcher · University of Johannesburg</h3>
+              <p>College of Business and Economics, University of Johannesburg, South Africa.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Jul 2022 – Jan 2024</div>
+            <div>
+              <h3>Assistant Professor and Area Co-Chair · TAPMI</h3>
+              <p>Accounting, Economics and Finance Area, TA Pai Management Institute, Manipal Academy of Higher Education.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Jul 2020 – Jun 2022</div>
+            <div>
+              <h3>Assistant Professor · CHRIST University</h3>
+              <p>Department of Economics, Bangalore, Karnataka.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected publications</div>
+            <h2>Peer-reviewed research in economics, behaviour, and public policy.</h2>
+          </div>
+          <p>
+            Use the filters or search box to quickly locate publications by theme, journal, year, or method. Add DOI and paper links when available.
+          </p>
+        </div>
+
+        <div class="pub-toolbar">
+          <div class="filter-group" aria-label="Publication filters">
+            <button class="filter-button active" data-filter="all" type="button">All</button>
+            <button class="filter-button" data-filter="health" type="button">Health</button>
+            <button class="filter-button" data-filter="behaviour" type="button">Behaviour</button>
+            <button class="filter-button" data-filter="policy" type="button">Policy</button>
+          </div>
+          <input class="search-box" id="pubSearch" type="search" placeholder="Search publications..." aria-label="Search publications" />
+        </div>
+
+        <div class="publication-list" id="publicationList">
+          <article class="publication" data-category="behaviour health" data-search="behavioural nudges maternal diet cluster randomised pilot trial pregnant women india journal behavioral experimental economics 2026">
+            <div class="pub-year">2026</div>
+            <div>
+              <h3>Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</h3>
+              <p><strong>Victor, V.</strong>, Subramanian, S., & Pradeep, D.</p>
+              <p><em>Journal of Behavioral and Experimental Economics</em>, 102557.</p>
+              <div class="pub-meta"><span class="meta-pill">Scopus Q1</span><span class="meta-pill">RCT</span><span class="meta-pill">Maternal nutrition</span></div>
+            </div>
+          </article>
+
+          <article class="publication" data-category="health policy" data-search="spousal bereavement depression moderating effects pre loss circumstances social support india economics human biology 2026">
+            <div class="pub-year">2026</div>
+            <div>
+              <h3>Spousal bereavement and depression: Testing moderating effects of pre-loss circumstances and social support in India</h3>
+              <p><strong>Victor, V.</strong></p>
+              <p><em>Economics & Human Biology</em>, 101585.</p>
+              <div class="pub-meta"><span class="meta-pill">Scopus Q1</span><span class="meta-pill">Health economics</span><span class="meta-pill">DiD</span></div>
+            </div>
+          </article>
+
+          <article class="publication" data-category="behaviour" data-search="incentivised dishonesty moral frameworks fake online reviews international journal consumer studies 2024">
+            <div class="pub-year">2024</div>
+            <div>
+              <h3>Incentivised dishonesty: Moral frameworks underlying fake online reviews</h3>
+              <p><strong>Victor, V.</strong>, James, N., & Dominic, E.</p>
+              <p><em>International Journal of Consumer Studies</em>, 48(2), e13037.</p>
+              <div class="pub-meta"><span class="meta-pill">Scopus Q1</span><span class="meta-pill">Consumer behaviour</span><span class="meta-pill">Dishonesty</span></div>
+            </div>
+          </article>
+
+          <article class="publication" data-category="behaviour policy" data-search="nudges choice architecture public policy bibliometric analysis journal behavioral experimental economics 2023">
+            <div class="pub-year">2023</div>
+            <div>
+              <h3>Nudges and choice architecture in public policy: A bibliometric analysis</h3>
+              <p><strong>Victor, V.</strong>, Nair, A. M., & Meyer, D. F.</p>
+              <p><em>Journal of Behavioral and Experimental Economics</em>, 102020.</p>
+              <div class="pub-meta"><span class="meta-pill">Scopus Q1</span><span class="meta-pill">Bibliometrics</span><span class="meta-pill">Public policy</span></div>
+            </div>
+          </article>
+
+          <article class="publication" data-category="health behaviour" data-search="message framing covid 19 vaccine acceptance millennials south india plos one 2022">
+            <div class="pub-year">2022</div>
+            <div>
+              <h3>Message framing and COVID-19 vaccine acceptance among millennials in South India</h3>
+              <p>Prakash, A., Jeyakumar Nathan, R., Kini, S., & <strong>Victor, V.</strong></p>
+              <p><em>PLOS ONE</em>, 17(7), e0269487.</p>
+              <div class="pub-meta"><span class="meta-pill">Scopus Q1</span><span class="meta-pill">Health behaviour</span><span class="meta-pill">Framing</span></div>
+            </div>
+          </article>
+
+          <article class="publication" data-category="behaviour" data-search="gym goers self identification physically attractive fitness trainers intention to exercise behavioral sciences 2022">
+            <div class="pub-year">2022</div>
+            <div>
+              <h3>Gym-goers’ self-identification with physically attractive fitness trainers and intention to exercise</h3>
+              <p>Nathan, R. J., <strong>Victor, V.</strong>, & Pei Kian, T.</p>
+              <p><em>Behavioral Sciences</em>, 12(5), 158.</p>
+              <div class="pub-meta"><span class="meta-pill">Scopus Q1</span><span class="meta-pill">Behaviour</span><span class="meta-pill">Fitness</span></div>
+            </div>
+          </article>
+
+          <article class="publication" data-category="behaviour policy" data-search="food innovation adoption organic food consumerism cross national malaysia hungary foods 2021">
+            <div class="pub-year">2021</div>
+            <div>
+              <h3>Food innovation adoption and organic food consumerism: A cross-national study between Malaysia and Hungary</h3>
+              <p>Nathan, R. J., <strong>Victor, V.</strong>, Popp, J., Fekete-Farkas, M., & Oláh, J.</p>
+              <p><em>Foods</em>, 10(2), 363.</p>
+              <div class="pub-meta"><span class="meta-pill">Scopus Q1</span><span class="meta-pill">Food economics</span><span class="meta-pill">Cross-national</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Funded research</div>
+            <h2>Externally funded projects with field and policy relevance.</h2>
+          </div>
+          <p>
+            Current and recent funded work includes climate-sensitive disease mapping and behavioural interventions for maternal nutrition, supported by J-PAL South Asia.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card project-card">
+            <span class="amount">₹16,26,785 · J-PAL South Asia</span>
+            <h3>Mapping climate-induced dengue proliferation zones in Kerala for targeted health interventions</h3>
+            <p><strong>Role:</strong> Principal Investigator. The project studies climate-linked dengue risk and aims to identify geographically targeted intervention zones.</p>
+            <div class="tag-row"><span class="tag">PI</span><span class="tag">Dengue</span><span class="tag">Kerala</span><span class="tag">Climate risk</span></div>
+          </article>
+
+          <article class="card project-card">
+            <span class="amount">₹20,81,162 · J-PAL South Asia</span>
+            <h3>Effectiveness of behavioural interventions on dietary intake of pregnant women in Karnataka, India</h3>
+            <p><strong>Role:</strong> Co-Principal Investigator. The study evaluates behavioural nudges for improving maternal dietary intake.</p>
+            <div class="tag-row"><span class="tag">Co-PI</span><span class="tag">Nudges</span><span class="tag">RCT</span><span class="tag">Maternal diet</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Teaching</div>
+            <h2>Courses taught at IIT Roorkee.</h2>
+          </div>
+          <p>
+            Teaching combines formal economic theory, applied econometrics, real datasets, causal reasoning, and policy-relevant empirical applications.
+          </p>
+        </div>
+
+        <div class="course-grid">
+          <div class="course"><strong>HSC-204</strong><span>Advanced Econometrics</span></div>
+          <div class="course"><strong>HS 504</strong><span>Econometrics Lab: Causal Inference</span></div>
+          <div class="course"><strong>HSN 512</strong><span>Behavioural Economics</span></div>
+          <div class="course"><strong>HS 501</strong><span>Industrial Organisation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="editorial">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Academic service</div>
+            <h2>Editorial and reviewer roles.</h2>
+          </div>
+          <p>
+            Editorial assignments and peer-review activity support research communities in economics, management, behavioural science, and interdisciplinary social science.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Scientific Editor</h3>
+            <p><em>International Review of Economics and Finance</em>, Elsevier. Since February 2026.</p>
+          </article>
+          <article class="card">
+            <h3>Editorial Board Member</h3>
+            <p><em>Humanities and Social Sciences Communications</em>, Nature Portfolio. Since April 2025.</p>
+          </article>
+          <article class="card">
+            <h3>Editorial Board Member</h3>
+            <p><em>Journal of Economic Exploitation and Inequality</em>, Emerald. Since January 2026.</p>
+          </article>
+        </div>
+
+        <div class="tag-row" style="margin-top: 1rem;">
+          <span class="tag">Applied Economics</span>
+          <span class="tag">Journal of Business Research</span>
+          <span class="tag">International Journal of Emerging Markets</span>
+          <span class="tag">Policy and Society</span>
+          <span class="tag">International Journal of Applied Behavioural Economics</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Public writing</div>
+            <h2>Economics for wider audiences.</h2>
+          </div>
+          <p>
+            Selected public-facing essays and newspaper articles translate economic reasoning for students, policymakers, managers, and general readers.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Guest author profiles</h3>
+            <div class="writing-list" style="margin-top: 1rem;">
+              <a class="writing-link" href="https://fee.org/people/vijay-victor/" target="_blank" rel="noopener">Foundation for Economic Education <span>↗</span></a>
+              <a class="writing-link" href="https://mises.org/profile/vijay-victor" target="_blank" rel="noopener">Mises Institute <span>↗</span></a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Selected newspaper articles</h3>
+            <div class="writing-list" style="margin-top: 1rem;">
+              <a class="writing-link" href="#">Greening the MBA, not greenwashing it <span>2023</span></a>
+              <a class="writing-link" href="#">Rupee is a long way from replacing the dollar <span>2023</span></a>
+              <a class="writing-link" href="#">High bank FD interest rates may not last for long <span>2023</span></a>
+              <a class="writing-link" href="#">Inflation: Misled by mismeasurement <span>2022</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-panel">
+        <div class="contact-card">
+          <div class="section-kicker">Contact</div>
+          <h2>For research collaboration, supervision, seminars, or media queries.</h2>
+          <p>
+            The cleanest public website version should avoid displaying personal phone numbers and date of birth. Email and professional profile links are enough for academic visibility.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a>
+            <a class="button secondary" href="CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Academic profiles</h3>
+          <div class="contact-links" style="margin-top: 1rem;">
+            <a class="contact-link" href="https://linkedin.com/in/vijay-victor-95059a52" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+            <a class="contact-link" href="https://publons.com/researcher/1608242/vijay-victor/" target="_blank" rel="noopener">Publons / Web of Science Reviewer Profile <span>↗</span></a>
+            <a class="contact-link" href="mailto:vijay.victor@hs.iitr.ac.in">Email <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Dr. Vijay Victor. Built for academic visibility, clarity, and accessibility.</div>
+      <a class="back-to-top" href="#top">Back to top ↑</a>
     </div>
+  </footer>
 
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const pubSearch = document.getElementById('pubSearch');
+    const publicationList = document.getElementById('publicationList');
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const publications = Array.from(document.querySelectorAll('.publication'));
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      html.setAttribute('data-theme', savedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    let activeFilter = 'all';
+
+    function updatePublications() {
+      const query = pubSearch.value.trim().toLowerCase();
+
+      publications.forEach(pub => {
+        const categories = pub.dataset.category || '';
+        const text = pub.dataset.search || pub.textContent.toLowerCase();
+        const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
+        const matchesSearch = !query || text.includes(query);
+        pub.classList.toggle('hidden', !(matchesFilter && matchesSearch));
+      });
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        activeFilter = button.dataset.filter;
+        updatePublications();
+      });
+    });
+
+    pubSearch.addEventListener('input', updatePublications);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
