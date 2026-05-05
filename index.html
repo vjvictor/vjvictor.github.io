@@ -40,8 +40,8 @@
       --muted:       #5a5a54;
       --faint:       #9a998f;
       --rule:        #e0ddd4;
-      --accent:      #1d3461;      /* deep navy */
-      --accent-warm: #8b2e16;      /* muted crimson for hover / highlights */
+      --accent:      #1d3461;
+      --accent-warm: #8b2e16;
       --accent-bg:   #eef2f9;
       --max:         1100px;
       --sidebar-w:   280px;
@@ -287,6 +287,35 @@
     }
     .abstract-body.open { display: block; }
 
+    /* ── Books ── */
+    .book-list { display: grid; gap: 0; }
+    .book {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .book:first-child { padding-top: 0; }
+    .book:last-child { border-bottom: 0; }
+    .book-title {
+      margin: 0 0 .3rem;
+      font-family: var(--serif); font-size: 1.05rem;
+      font-weight: 500; line-height: 1.38;
+    }
+    .book-authors {
+      margin: 0 0 .15rem;
+      font-family: var(--sans); font-size: .88rem; color: var(--muted);
+    }
+    .book-meta {
+      margin: 0;
+      font-family: var(--sans); font-size: .88rem; color: var(--muted);
+    }
+    .book-meta em { font-style: italic; color: var(--ink); }
+    .book-links {
+      margin-top: .5rem; display: flex; flex-wrap: wrap; gap: .5rem 1.1rem;
+      font-family: var(--sans); font-size: .82rem;
+    }
+    .book-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .book-links a:hover { text-decoration: underline; color: var(--accent-warm); }
+
     /* ── Working papers ── */
     .wp-list { display: grid; gap: 0; }
     .wp {
@@ -434,13 +463,14 @@
       "knowsAbout": [
         "Behavioural Economics",
         "Health Economics",
+        "Digital Consumer Behaviour",
+        "Algorithmic Pricing",
         "Applied Econometrics",
         "Causal Inference",
+        "Experimental Research Designs",
         "Public Policy",
         "Discrete Choice Experiments",
-        "Difference-in-Differences",
-        "Health Insurance",
-        "Experimental Economics"
+        "Difference-in-Differences"
       ],
       "email": "mailto:vijay.victor@hs.iitr.ac.in",
       "image": "https://vjvictor.github.io/vijay.png",
@@ -468,6 +498,7 @@
     <nav class="topnav" aria-label="Page sections">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#books">Books</a>
       <a href="#working-papers">Working Papers</a>
       <a href="#teaching">Teaching</a>
       <a href="#cv">CV</a>
@@ -503,8 +534,10 @@
       <ul>
         <li>Behavioural Economics</li>
         <li>Health Economics</li>
-        <li>Applied Econometrics</li>
-        <li>Causal Inference</li>
+        <li>Digital Consumer Behaviour</li>
+        <li>Algorithmic &amp; Personalised Pricing</li>
+        <li>Applied Econometrics &amp; Causal Inference</li>
+        <li>Experimental Research Designs</li>
         <li>Public Policy</li>
       </ul>
     </div>
@@ -534,22 +567,26 @@
 
   <main class="main" id="content">
 
+    <!-- ── Bio ── -->
     <div class="bio" id="about">
       <p>
         I am an Assistant Professor in the Department of Humanities and Social Sciences at the Indian
         Institute of Technology Roorkee, and a Visiting Researcher at the University of Johannesburg.
-        My research spans behavioural economics, health economics, and empirical policy evaluation.
+        My research spans behavioural economics, health economics, and the economics of digital
+        markets and platforms.
       </p>
       <p>
-        I study how households and individuals make decisions under constraints — with particular
-        attention to health insurance design, out-of-pocket pharmaceutical expenditure, maternal
-        nutrition, climate-sensitive disease proliferation, dishonesty, and choice architecture.
-        Methodologically, I draw on difference-in-differences, field and discrete choice experiments,
-        and applied microeconometrics.
+        I study how individuals make decisions under constraints — with particular attention to
+        health insurance design, out-of-pocket pharmaceutical expenditure, consumer responses to
+        personalised and algorithmic pricing, dishonesty in digital markets, and choice architecture
+        in public health. Methodologically, I draw on difference-in-differences, field and discrete
+        choice experiments, and applied microeconometrics.
       </p>
       <p>
-        I am a Principal Investigator on two J-PAL South Asia-funded projects on climate and dengue
-        risk mapping, and on behavioural dietary interventions for pregnant women in Karnataka.
+        I am Principal Investigator on a J-PAL South Asia-funded project on targeted health
+        interventions for vector-borne disease risk in Kerala, and was Co-Principal Investigator
+        on a completed J-PAL project on behavioural dietary interventions for pregnant women
+        in Karnataka.
       </p>
       <div class="text-links">
         <a href="CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
@@ -559,39 +596,44 @@
       </div>
     </div>
 
+    <!-- ── News ── -->
     <div class="news-strip">
       <h3>Recent</h3>
       <div class="news-items">
         <div class="news-item"><span class="news-date">2026</span><span class="news-body">New paper in <em>Journal of Behavioral and Experimental Economics</em>: behavioural nudges and maternal diet, cluster-RCT.</span></div>
         <div class="news-item"><span class="news-date">2026</span><span class="news-body">New paper in <em>Economics &amp; Human Biology</em>: spousal bereavement and depression in India.</span></div>
         <div class="news-item"><span class="news-date">2024</span><span class="news-body">Appointed to Editorial Board, <em>Humanities and Social Sciences Communications</em> (Nature Portfolio).</span></div>
-        <div class="news-item"><span class="news-date">2024</span><span class="news-body">J-PAL South Asia grant awarded: dengue proliferation mapping in Kerala (₹16,26,785).</span></div>
+        <div class="news-item"><span class="news-date">2024</span><span class="news-body">J-PAL South Asia grant awarded: dengue risk and targeted health interventions in Kerala (₹16,26,785).</span></div>
       </div>
     </div>
 
+    <!-- ── Research ── -->
     <section class="content-section" id="research">
       <h2>Research</h2>
       <p>
-        My research agenda sits at the intersection of behavioural economics, health economics, and
-        empirical policy evaluation. I am particularly interested in how behavioural frictions and
-        institutional design affect welfare-relevant decisions in health, insurance, and household
-        consumption.
+        In health economics, I examine the causal effects of publicly financed insurance on
+        out-of-pocket pharmaceutical expenditure among near-poor and missing-middle households.
+        The empirical strategy draws on difference-in-differences designs and administrative
+        data from India, with attention to coverage expansion effects on catastrophic health
+        expenditure.
       </p>
       <p>
-        On the health side, I examine the causal effects of publicly financed health insurance
-        expansion — especially pharmaceutical coverage — on out-of-pocket expenditure among
-        near-poor and missing-middle households, using administrative data and
-        difference-in-differences designs.
+        A second strand covers consumer behaviour on digital platforms: how personalised and
+        algorithmic pricing strategies shape purchase decisions and fairness perceptions, and
+        how dishonesty operates in platform markets — including the moral frameworks underlying
+        incentivised fake reviews. This work spans experimental and survey-based methods across
+        India, Malaysia, and Eastern Europe.
       </p>
       <p>
-        My behavioural work uses field experiments and discrete choice methods to study nudges
-        in maternal nutrition, time preferences, and dishonesty in digital markets. A parallel
-        strand investigates climate-induced disease risk, focusing on how shifting temperature and
-        rainfall patterns expand dengue proliferation zones and shape risk perception and
-        health-seeking behaviour in Kerala.
+        On the experimental side, I use field trials and discrete choice experiments to study
+        nudges and choice architecture in maternal nutrition and public health. Active funded
+        work examines targeted interventions in areas of high vector-borne disease risk in
+        Kerala, combining satellite-derived climate data with health administrative records
+        to design scalable public-health responses.
       </p>
     </section>
 
+    <!-- ── Publications ── -->
     <section class="content-section" id="publications">
       <h2>Publications</h2>
 
@@ -660,6 +702,21 @@
         </article>
 
         <article class="pub">
+          <p class="pub-title">Is Bitcoin a safe haven for Indian investors? A GARCH volatility analysis</p>
+          <p class="pub-authors">Murty, S., <strong>Victor, V.</strong>, &amp; Fekete-Farkas, M.</p>
+          <p class="pub-journal"><em>Journal of Risk and Financial Management</em>, 15(7), 317 (2022).</p>
+          <div class="pub-links">
+            <a href="https://www.mdpi.com/1911-8074/15/7/317" target="_blank" rel="noopener">Journal link</a>
+            <a href="https://doi.org/10.3390/jrfm15070317" target="_blank" rel="noopener">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            This paper examines whether Bitcoin functions as a safe haven asset for Indian investors,
+            using GARCH-based volatility models and dynamic conditional correlation analysis.
+          </div>
+        </article>
+
+        <article class="pub">
           <p class="pub-title">Message framing and COVID-19 vaccine acceptance among millennials in South India</p>
           <p class="pub-authors">Prakash, A., Jeyakumar Nathan, R., Kini, S., &amp; <strong>Victor, V.</strong></p>
           <p class="pub-journal"><em>PLOS ONE</em>, 17(7), e0269487 (2022).</p>
@@ -690,6 +747,22 @@
         </article>
 
         <article class="pub">
+          <p class="pub-title">Consumer response towards personalised pricing strategies in online marketing</p>
+          <p class="pub-authors"><strong>Victor, V.</strong>, Nathan, R. J., &amp; Fekete-Farkas, M.</p>
+          <p class="pub-journal"><em>International Journal of Technology Marketing</em>, 15(2–3), 223–265 (2021).</p>
+          <div class="pub-links">
+            <a href="https://www.inderscience.com/jhome.php?jcode=ijtmkt" target="_blank" rel="noopener">Journal link</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            This paper examines how e-tailers' use of personalised pricing — tailoring prices based
+            on individual behavioural data and perceived willingness to pay — affects fair price
+            perceptions, privacy concerns, and customer loyalty across positive and negative
+            purchase contexts.
+          </div>
+        </article>
+
+        <article class="pub">
           <p class="pub-title">Food innovation adoption and organic food consumerism: A cross-national study between Malaysia and Hungary</p>
           <p class="pub-authors">Nathan, R. J., Soekmawati, <strong>Victor, V.</strong>, Popp, J., Fekete-Farkas, M., &amp; Oláh, J.</p>
           <p class="pub-journal"><em>Foods</em>, 10(2), 363 (2021).</p>
@@ -704,9 +777,83 @@
           </div>
         </article>
 
+        <article class="pub">
+          <p class="pub-title">Tourists' use of Airbnb app for visiting a historical city</p>
+          <p class="pub-authors">Nathan, R. J., <strong>Victor, V.</strong>, Tan, M., &amp; Fekete-Farkas, M.</p>
+          <p class="pub-journal"><em>Information Technology &amp; Tourism</em>, 22 (2020).</p>
+          <div class="pub-links">
+            <a href="https://link.springer.com/journal/40558" target="_blank" rel="noopener">Journal link</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            This paper investigates the factors that influence tourists' use of the Airbnb platform
+            when visiting a historical city, drawing on technology acceptance and platform adoption
+            frameworks.
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Pricing strategies in the era of digitalisation and the perceived shift in consumer behaviour of youth in Poland</p>
+          <p class="pub-authors"><strong>Victor, V.</strong>, Thoppan, J. J., Fekete-Farkas, M., &amp; Grabara, J.</p>
+          <p class="pub-journal"><em>Journal of International Studies</em>, 12 (2019).</p>
+          <div class="pub-links">
+            <a href="https://www.jois.eu/" target="_blank" rel="noopener">Journal link</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            This paper examines how the shift to digital retail has altered pricing strategies and
+            consumer behaviour among youth in Poland, with focus on perceived price fairness and
+            willingness to pay in online environments.
+          </div>
+        </article>
+
+        <article class="pub">
+          <p class="pub-title">Factors influencing consumer behavior and prospective purchase decisions in a dynamic pricing environment</p>
+          <p class="pub-authors"><strong>Victor, V.</strong>, Joy Thoppan, J., Jeyakumar Nathan, R., &amp; Fekete Farkas, M.</p>
+          <p class="pub-journal"><em>Social Sciences</em>, 7(9), 153 (2018).</p>
+          <div class="pub-links">
+            <a href="https://www.mdpi.com/2076-0760/7/9/153" target="_blank" rel="noopener">Journal link</a>
+            <a href="https://doi.org/10.3390/socsci7090153" target="_blank" rel="noopener">DOI</a>
+            <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
+          </div>
+          <div class="abstract-body">
+            This paper investigates the factors that influence consumer behaviour and prospective
+            online purchase decisions when exposed to dynamic pricing, using an exploratory factor
+            analysis approach.
+          </div>
+        </article>
+
       </div>
     </section>
 
+    <!-- ── Books ── -->
+    <section class="content-section" id="books">
+      <h2>Books</h2>
+
+      <div class="book-list">
+
+        <div class="book">
+          <p class="book-title">Nudging the Masses: The Paradox of Libertarian Paternalism in Global Populist Movements</p>
+          <p class="book-authors"><strong>Victor, V.</strong></p>
+          <p class="book-meta"><em>Springer</em>, 2023. ISBN 978-981-16-9859-0.</p>
+          <div class="book-links">
+            <a href="https://link.springer.com/" target="_blank" rel="noopener">Publisher link</a>
+          </div>
+        </div>
+
+        <div class="book">
+          <p class="book-title">Paying a Price for Value: Choose Wisely</p>
+          <p class="book-authors"><strong>Victor, V.</strong> &amp; Dominic, E.</p>
+          <p class="book-meta"><em>Springer</em>, 2020. ISBN 978-981-33-6373-1.</p>
+          <div class="book-links">
+            <a href="https://link.springer.com/" target="_blank" rel="noopener">Publisher link</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Working Papers & Projects ── -->
     <section class="content-section" id="working-papers">
       <h2>Working Papers &amp; Projects</h2>
 
@@ -724,7 +871,7 @@
 
         <div class="wp">
           <span class="wp-status">Funded project — Principal Investigator</span>
-          <p class="wp-title">Mapping climate-induced dengue proliferation zones in Kerala for targeted health interventions</p>
+          <p class="wp-title">Mapping climate-induced disease risk zones for targeted health interventions in Kerala</p>
           <p class="wp-desc">
             Uses satellite-derived climate data and administrative dengue incidence records to identify
             high-risk zones and design scalable, evidence-based public-health interventions.
@@ -733,19 +880,31 @@
         </div>
 
         <div class="wp">
-          <span class="wp-status">Funded project — Co-Principal Investigator</span>
+          <span class="wp-status">Completed project — Co-Principal Investigator</span>
           <p class="wp-title">Effectiveness of behavioural interventions on dietary intake of pregnant women in Karnataka, India</p>
           <p class="wp-desc">
             A randomised evaluation of nudge-based dietary programmes administered at antenatal
-            care clinics. Assesses impacts on dietary diversity and micronutrient intake among
+            care clinics. Assessed impacts on dietary diversity and micronutrient intake among
             low-income pregnant women.
           </p>
           <p class="wp-grant">J-PAL South Asia · ₹20,81,162</p>
         </div>
 
+        <div class="wp">
+          <span class="wp-status">Funded project — Principal Investigator</span>
+          <p class="wp-title">Impact of traffic information on service time expectations of customers in food delivery apps</p>
+          <p class="wp-desc">
+            Examines how real-time traffic information displayed on food delivery platforms shapes
+            consumer wait-time expectations and order decisions, using a behavioural nudges
+            and consumer decision-making framework.
+          </p>
+          <p class="wp-grant">Manipal Academy of Higher Education · ₹1,00,000</p>
+        </div>
+
       </div>
     </section>
 
+    <!-- ── Teaching ── -->
     <section class="content-section" id="teaching">
       <h2>Teaching</h2>
       <p style="font-family:var(--sans);font-size:.9rem;color:var(--muted);margin-bottom:1rem;">
@@ -771,6 +930,7 @@
       </div>
     </section>
 
+    <!-- ── CV ── -->
     <section class="content-section" id="cv">
       <h2>Curriculum Vitae</h2>
 
@@ -817,6 +977,7 @@
       </p>
     </section>
 
+    <!-- ── Service ── -->
     <section class="content-section" id="service">
       <h2>Editorial Service &amp; Reviewing</h2>
       <div class="two-col">
@@ -841,6 +1002,7 @@
       </div>
     </section>
 
+    <!-- ── Public Writing ── -->
     <section class="content-section" id="writing">
       <h2>Public Writing</h2>
       <p style="font-family:var(--sans);font-size:.9rem;color:var(--muted);">
@@ -851,6 +1013,7 @@
       </p>
     </section>
 
+    <!-- ── Contact ── -->
     <section class="content-section" id="contact">
       <h2>Contact</h2>
       <div class="contact-grid">
