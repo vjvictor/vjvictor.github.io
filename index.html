@@ -81,6 +81,8 @@
 
     a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
     a:hover { color: var(--accent-warm); }
+    a:focus-visible,
+    button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     /* ── Skip link ── */
     .skip { position: absolute; left: -9999px; top: 1rem; background: var(--accent); color: #fff; padding: .6rem 1rem; z-index: 999; font-family: var(--sans); }
@@ -109,6 +111,13 @@
     }
     .topnav a { color: var(--muted); text-decoration: none; }
     .topnav a:hover { color: var(--accent); }
+    .nav-toggle {
+      display: none;
+      background: none; border: 1px solid var(--rule);
+      color: var(--ink); padding: .3rem .65rem;
+      border-radius: 4px; cursor: pointer;
+      font-family: var(--sans); font-size: .85rem;
+    }
     .theme-btn {
       background: none; border: 1px solid var(--rule);
       color: var(--faint); padding: .28rem .55rem;
@@ -381,6 +390,10 @@
       font-size: .82rem; text-transform: uppercase; letter-spacing: .04em;
       margin-bottom: .15rem;
     }
+    .course-institution {
+      display: block; margin-top: .25rem;
+      color: var(--faint); font-size: .78rem;
+    }
 
     /* ── Service ── */
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
@@ -414,16 +427,28 @@
     @media (max-width: 860px) {
       .page { grid-template-columns: 1fr; gap: 1.5rem; }
       .sidebar { position: static; }
-      .profile-photo { aspect-ratio: 3/1; }
+      .profile-photo { width: 180px; aspect-ratio: 4/5; }
+      .topbar-inner { flex-wrap: wrap; }
+      .nav-toggle { display: inline-block; }
+      .topnav {
+        display: none; width: 100%;
+        flex-direction: column; align-items: stretch; gap: 0;
+        padding-top: .45rem; border-top: 1px solid var(--rule);
+      }
+      .topnav.open { display: flex; }
+      .topnav a { padding: .42rem 0; }
+      .theme-btn { align-self: flex-start; margin: .35rem 0 .2rem; }
     }
     @media (max-width: 640px) {
-      .topnav { gap: .8rem; font-size: .82rem; }
       .cv-row,
       .two-col,
       .course-grid { grid-template-columns: 1fr; }
       .cv-date { padding-top: 0; }
       .news-item { grid-template-columns: 1fr; gap: 0; }
       .news-date { color: var(--accent); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 
@@ -444,7 +469,7 @@
       "honorificPrefix": "Dr.",
       "url": "https://vjvictor.github.io/",
       "image": "https://vjvictor.github.io/vijay.png",
-      "email": "mailto:vijay.victor@hs.iitr.ac.in",
+      "email": "mailto:vijay@iitgoa.ac.in",
       "jobTitle": "Assistant Professor of Economics",
       "description": "Vijay Victor is an economist working on behavioural economics, health economics, applied econometrics, causal inference, and public policy.",
       "worksFor": {
@@ -505,11 +530,11 @@
 <header class="topbar" role="banner">
   <div class="topbar-inner">
     <a class="site-name" href="#top">Vijay Victor</a>
-    <nav class="topnav" aria-label="Page sections">
-      <a href="#education">Education</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="topnav">Menu</button>
+    <nav class="topnav" id="topnav" aria-label="Page sections">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
-      <a href="#books">Books</a>
+      <a href="#book-chapters">Book Chapters</a>
       <a href="#working-papers">Working Papers</a>
       <a href="#teaching">Teaching</a>
       <a href="#cv">CV</a>
@@ -561,12 +586,11 @@
     <div class="sidebar-block">
       <p class="sidebar-label">Links</p>
       <div class="ext-links">
-        <a class="ext-link" href="mailto:vijay.victor@hs.iitr.ac.in">Email <span class="arrow">→</span></a>
+        <a class="ext-link" href="mailto:vijay@iitgoa.ac.in">Email <span class="arrow">→</span></a>
         <a class="ext-link" href="CV.pdf" target="_blank" rel="noopener">Curriculum Vitae <span class="arrow">PDF</span></a>
         <a class="ext-link" href="https://scholar.google.com/citations?hl=en&user=eRmy9ssAAAAJ" target="_blank" rel="noopener">Google Scholar <span class="arrow">↗</span></a>
         <a class="ext-link" href="https://orcid.org/0000-0002-0885-5578" target="_blank" rel="noopener">ORCID <span class="arrow">↗</span></a>
-        <a class="ext-link" href="https://iitr.ac.in/~HS/Vijay_Victor" target="_blank" rel="noopener">IIT Roorkee Profile <span class="arrow">↗</span></a>
-        <a class="ext-link" href="https://ssrn.com/" target="_blank" rel="noopener">SSRN <span class="arrow">↗</span></a>
+        <a class="ext-link" href="https://iitr.ac.in/~HS/Vijay_Victor" target="_blank" rel="noopener">Former IIT Roorkee Profile <span class="arrow">↗</span></a>
         <a class="ext-link" href="https://publons.com/researcher/1608242/vijay-victor/" target="_blank" rel="noopener">Reviewer Profile <span class="arrow">↗</span></a>
         <a class="ext-link" href="https://linkedin.com/in/vijay-victor-95059a52" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
       </div>
@@ -601,7 +625,7 @@
         <a href="CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
         <a href="#publications">Selected Publications</a>
         <a href="#working-papers">Working Papers &amp; Grants</a>
-        <a href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a>
+        <a href="mailto:vijay@iitgoa.ac.in">vijay@iitgoa.ac.in</a>
       </div>
     </div>
 
@@ -609,33 +633,13 @@
     <div class="news-strip">
       <h2>Recent</h2>
       <div class="news-items">
-        <div class="news-item"><span class="news-date">2026</span><span class="news-body">New paper in <em>Journal of Behavioral and Experimental Economics</em>: behavioural nudges and maternal diet, cluster-RCT.</span></div>
-        <div class="news-item"><span class="news-date">2026</span><span class="news-body">New paper in <em>Economics &amp; Human Biology</em>: spousal bereavement and depression in India.</span></div>
-        <div class="news-item"><span class="news-date">2024</span><span class="news-body">Appointed to Editorial Board, <em>Humanities and Social Sciences Communications</em> (Nature Portfolio).</span></div>
+        <div class="news-item"><span class="news-date">Jun 2026</span><span class="news-body"><a href="https://doi.org/10.1016/j.socscimed.2026.119483" target="_blank" rel="noopener"><em>Does integrating pharmaceutical coverage into publicly financed health insurance reduce out-of-pocket spending? Difference-in-differences evidence from Kerala, India</em></a> — <span class="news-journal">Social Science &amp; Medicine</span>.</span></div>
+        <div class="news-item"><span class="news-date">May 2026</span><span class="news-body"><a href="https://doi.org/10.1016/j.ehb.2026.101585" target="_blank" rel="noopener"><em>Spousal bereavement and depression: Testing moderating effects of pre-loss circumstances and social support in India</em></a> — <span class="news-journal">Economics &amp; Human Biology</span>.</span></div>
+        <div class="news-item"><span class="news-date">Mar 2026</span><span class="news-body"><a href="https://doi.org/10.1016/j.socec.2026.102557" target="_blank" rel="noopener"><em>Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</em></a> — <span class="news-journal">Journal of Behavioral and Experimental Economics</span>.</span></div>
+        <div class="news-item"><span class="news-date">2025</span><span class="news-body">Editorial Advisory Board Member, <em>Journal of Economic Exploitation and Inequality</em>, Emerald Publishing.</span></div>
         <div class="news-item"><span class="news-date">2024</span><span class="news-body">J-PAL South Asia grant awarded: dengue risk and targeted health interventions in Kerala (₹16,26,785).</span></div>
       </div>
     </div>
-
-    <!-- ── Education ── -->
-    <section class="content-section" id="education">
-      <h2>Education</h2>
-      <div class="cv-list">
-        <div class="cv-row">
-          <div class="cv-date">2017 – 2020</div>
-          <div>
-            <h3>Ph.D. in Economics — <em>Summa Cum Laude</em></h3>
-            <p>Doctoral School of Economic and Regional Sciences, Szent István University (now Hungarian University of Agriculture and Life Sciences), Hungary.</p>
-          </div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-date">2016</div>
-          <div>
-            <h3>M.A. in Economics — Second Rank</h3>
-            <p>University of Kerala, India.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ── Research ── -->
     <section class="content-section" id="research">
@@ -669,17 +673,20 @@
       <div class="pub-list">
 
         <article class="pub">
-          <p class="pub-title">Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</p>
-          <p class="pub-authors"><strong>Victor, V.</strong>, Subramanian, S., &amp; Pradeep, D.</p>
-          <p class="pub-journal"><em>Journal of Behavioral and Experimental Economics</em>, 122, 102557 (2026). Elsevier.</p>
+          <p class="pub-title">Does integrating pharmaceutical coverage into publicly financed health insurance reduce out-of-pocket spending? Difference-in-differences evidence from Kerala, India</p>
+          <p class="pub-authors">Menon, K. V., <strong>Victor, V.</strong>, &amp; Vaidya, O. S.</p>
+          <p class="pub-journal"><em>Social Science &amp; Medicine</em>, 404, 119483 (2026). Elsevier.</p>
           <div class="pub-links">
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S2214804326000480" target="_blank" rel="noopener">View</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0277953626005599" target="_blank" rel="noopener">View</a>
+            <a href="https://doi.org/10.1016/j.socscimed.2026.119483" target="_blank" rel="noopener">DOI</a>
             <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
           </div>
           <div class="abstract-body">
-            We report results from a cluster-randomised pilot trial examining whether low-cost
-            behavioural nudges — combining simplified dietary information, commitment devices, and
-            social norm messaging — improve dietary intake among pregnant women in rural India.
+            Using a difference-in-differences design on household panel data from Kerala, Tamil Nadu,
+            and Karnataka (2017–2020), this paper evaluates whether Kerala's KASP reform — which
+            integrated chronic-disease medicine coverage into publicly financed insurance — reduced
+            out-of-pocket health spending. Net out-of-pocket spending fell by roughly 32%, concentrated
+            in medicine expenditure, with larger effects among poorer and chronically ill households.
           </div>
         </article>
 
@@ -700,20 +707,19 @@
         </article>
 
         <article class="pub">
-          <p class="pub-title">Does integrating pharmaceutical coverage into publicly financed health insurance reduce out-of-pocket spending? Difference-in-differences evidence from Kerala, India</p>
-          <p class="pub-authors">Menon, K. V., <strong>Victor, V.</strong>, &amp; Vaidya, O. S.</p>
-          <p class="pub-journal"><em>Social Science &amp; Medicine</em>, 404, 119483 (2026). Elsevier.</p>
+          <p class="pub-title">Behavioural nudges and maternal diet: Results from a cluster-randomised pilot trial among pregnant women in India</p>
+          <p class="pub-authors"><strong>Victor, V.</strong>, Subramanian, S., &amp; Pradeep, D.</p>
+          <p class="pub-journal"><em>Journal of Behavioral and Experimental Economics</em>, 122, 102557 (2026). Elsevier.</p>
           <div class="pub-links">
-            <a href="https://www.sciencedirect.com/science/article/pii/S0277953626005599" target="_blank" rel="noopener">View</a>
-            <a href="https://doi.org/10.1016/j.socscimed.2026.119483" target="_blank" rel="noopener">DOI</a>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S2214804326000480" target="_blank" rel="noopener">View</a>
+            <a href="https://doi.org/10.1016/j.socec.2026.102557" target="_blank" rel="noopener">DOI</a>
             <button class="abstract-btn" onclick="toggleAbstract(this)">▸ Abstract</button>
           </div>
           <div class="abstract-body">
-            Using a difference-in-differences design on household panel data from Kerala, Tamil Nadu,
-            and Karnataka (2017–2020), this paper evaluates whether Kerala's KASP reform — which
-            integrated chronic-disease medicine coverage into publicly financed insurance — reduced
-            out-of-pocket health spending. Net out-of-pocket spending fell by roughly 32%, concentrated
-            in medicine expenditure, with larger effects among poorer and chronically ill households.
+            Using a four-arm cluster-randomised pilot across 22 primary health centre catchments,
+            this study evaluates printed pamphlets, ASHA home visits, and research-team phone calls.
+            Over four weeks, the interventions did not improve meal frequency or dietary diversity
+            relative to routine care.
           </div>
         </article>
 
@@ -797,27 +803,29 @@
       </div>
     </section>
 
-    <!-- ── Books ── -->
-    <section class="content-section" id="books">
-      <h2>Books</h2>
+    <!-- ── Book Chapters ── -->
+    <section class="content-section" id="book-chapters">
+      <h2>Book Chapters</h2>
 
       <div class="book-list">
 
         <div class="book">
           <p class="book-title">Nudging the Masses: The Paradox of Libertarian Paternalism in Global Populist Movements</p>
           <p class="book-authors"><strong>Victor, V.</strong></p>
-          <p class="book-meta"><em>Springer</em>, 2023. ISBN 978-981-16-9859-0.</p>
+          <p class="book-meta">In <em>Encyclopedia of New Populism and Responses in the 21st Century</em>. Springer, 2024, pp. 513–515.</p>
           <div class="book-links">
-            <a href="https://link.springer.com/" target="_blank" rel="noopener">View</a>
+            <a href="https://link.springer.com/rwe/10.1007/978-981-99-7802-1_25" target="_blank" rel="noopener">View</a>
+            <a href="https://doi.org/10.1007/978-981-99-7802-1_25" target="_blank" rel="noopener">DOI</a>
           </div>
         </div>
 
         <div class="book">
-          <p class="book-title">Paying a Price for Value: Choose Wisely</p>
+          <p class="book-title">Paying a Price to Get a Value: Choose Wisely</p>
           <p class="book-authors"><strong>Victor, V.</strong> &amp; Dominic, E.</p>
-          <p class="book-meta"><em>Springer</em>, 2020. ISBN 978-981-33-6373-1.</p>
+          <p class="book-meta">In <em>Consumer Happiness: Multiple Perspectives</em>. Springer, 2021, pp. 163–177.</p>
           <div class="book-links">
-            <a href="https://link.springer.com/" target="_blank" rel="noopener">View</a>
+            <a href="https://link.springer.com/chapter/10.1007/978-981-33-6374-8_10" target="_blank" rel="noopener">View</a>
+            <a href="https://doi.org/10.1007/978-981-33-6374-8_10" target="_blank" rel="noopener">DOI</a>
           </div>
         </div>
 
@@ -869,24 +877,28 @@
     <section class="content-section" id="teaching">
       <h2>Teaching</h2>
       <p style="font-family:var(--sans);font-size:.9rem;color:var(--muted);margin-bottom:1rem;">
-        Courses taught at IIT Goa, School of Humanities and Social Sciences.
+        Selected courses taught at IIT Goa and IIT Roorkee.
       </p>
       <div class="course-grid">
         <div class="course-item">
           <span class="course-code">HSC-204</span>
           Advanced Econometrics
+          <span class="course-institution">IIT Goa</span>
         </div>
         <div class="course-item">
           <span class="course-code">HS 504</span>
           Econometrics Lab: Causal Inference
+          <span class="course-institution">IIT Roorkee</span>
         </div>
         <div class="course-item">
           <span class="course-code">HSN 512</span>
           Behavioural Economics
+          <span class="course-institution">IIT Roorkee</span>
         </div>
         <div class="course-item">
           <span class="course-code">HS 501</span>
           Industrial Organisation
+          <span class="course-institution">IIT Roorkee</span>
         </div>
       </div>
     </section>
@@ -897,10 +909,17 @@
 
       <div class="cv-list">
         <div class="cv-row">
-          <div class="cv-date">Feb 2024 – present</div>
+          <div class="cv-date">Jun 2026 – present</div>
           <div>
             <h3>Assistant Professor</h3>
             <p>School of Humanities and Social Sciences, Indian Institute of Technology Goa, India.</p>
+          </div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-date">Feb 2024 – Jun 2026</div>
+          <div>
+            <h3>Assistant Professor</h3>
+            <p>Department of Humanities and Social Sciences, Indian Institute of Technology Roorkee, India.</p>
           </div>
         </div>
         <div class="cv-row">
@@ -966,9 +985,7 @@
         <div>
           <h3>Editorial roles</h3>
           <ul class="plain-list">
-            <li>Scientific Editor, <em>International Review of Economics and Finance</em>, Elsevier.</li>
-            <li>Editorial Board, <em>Humanities and Social Sciences Communications</em>, Nature Portfolio.</li>
-            <li>Editorial Board, <em>Journal of Economic Exploitation and Inequality</em>, Emerald.</li>
+            <li>Editorial Advisory Board Member, <em>Journal of Economic Exploitation and Inequality</em>, Emerald Publishing.</li>
           </ul>
         </div>
         <div>
@@ -1001,7 +1018,7 @@
       <div class="contact-grid">
         <div class="contact-row">
           <span class="contact-label">Email</span>
-          <a href="mailto:vijay.victor@hs.iitr.ac.in">vijay.victor@hs.iitr.ac.in</a>
+          <a href="mailto:vijay@iitgoa.ac.in">vijay@iitgoa.ac.in</a>
         </div>
         <div class="contact-row">
           <span class="contact-label">Office</span>
@@ -1022,13 +1039,15 @@
 
 <footer class="footer">
   <span>© <span id="yr"></span> Vijay Victor</span>
-  <span>Last updated: <span id="upd"></span></span>
+  <span>Last updated: June 2026</span>
 </footer>
 
 <script>
   /* ── Theme toggle ── */
   const root = document.documentElement;
   const btn = document.getElementById('themeToggle');
+  const navToggle = document.getElementById('navToggle');
+  const topnav = document.getElementById('topnav');
   const saved = localStorage.getItem('vv-theme');
   if (saved) root.setAttribute('data-theme', saved);
 
@@ -1038,18 +1057,51 @@
     localStorage.setItem('vv-theme', next);
   });
 
+  /* ── Mobile navigation ── */
+  navToggle.addEventListener('click', () => {
+    const open = topnav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.textContent = open ? 'Close' : 'Menu';
+  });
+
+  topnav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      topnav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = 'Menu';
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && topnav.classList.contains('open')) {
+      topnav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = 'Menu';
+      navToggle.focus();
+    }
+  });
+
   /* ── Abstract toggle ── */
+  document.querySelectorAll('.abstract-btn').forEach((abstractButton, index) => {
+    const body = abstractButton.closest('.pub').querySelector('.abstract-body');
+    const id = `abstract-${index + 1}`;
+    body.id = id;
+    body.hidden = true;
+    abstractButton.setAttribute('aria-controls', id);
+    abstractButton.setAttribute('aria-expanded', 'false');
+  });
+
   function toggleAbstract(btn) {
     const body = btn.closest('.pub').querySelector('.abstract-body');
-    const open = body.classList.toggle('open');
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', String(open));
+    body.hidden = !open;
+    body.classList.toggle('open', open);
     btn.textContent = (open ? '▾' : '▸') + ' Abstract';
   }
 
-  /* ── Footer dates ── */
+  /* ── Footer year ── */
   document.getElementById('yr').textContent = new Date().getFullYear();
-  document.getElementById('upd').textContent = new Date().toLocaleDateString('en-IN', {
-    year: 'numeric', month: 'long'
-  });
 </script>
 
 </body>
